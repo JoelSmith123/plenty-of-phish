@@ -13,7 +13,8 @@ const showData = [
       latitude: 20.631389,
       longitude: -87.073056,
       shows_count: 3,
-      location: "Riviera Maya, Quintana Roo, Mexico"
+      location: "Riviera Maya, Quintana Roo, Mexico",
+      img: 'https://www.jambase.com/wp-content/uploads/2016/09/phish-riviera-maya-2017-glory-1480x832.jpg'
     }
   },
   {
@@ -30,7 +31,8 @@ const showData = [
       latitude: 20.631389,
       longitude: -87.073056,
       shows_count: 3,
-      location: "Riviera Maya, Quintana Roo, Mexico"
+      location: "Riviera Maya, Quintana Roo, Mexico",
+      img: 'https://www.jambase.com/wp-content/uploads/2016/09/phish-riviera-maya-2017-glory-1480x832.jpg'
     }
   },
   {
@@ -47,7 +49,8 @@ const showData = [
       latitude: 20.631389,
       longitude: -87.073056,
       shows_count: 3,
-      location: "Riviera Maya, Quintana Roo, Mexico"
+      location: "Riviera Maya, Quintana Roo, Mexico",
+      img: 'https://www.jambase.com/wp-content/uploads/2016/09/phish-riviera-maya-2017-glory-1480x832.jpg'
     }
   },
   {
@@ -64,7 +67,8 @@ const showData = [
       latitude: 41.867516,
       longitude: -87.609299,
       shows_count: 9,
-      location: "Chicago, IL"
+      location: "Chicago, IL",
+      img: 'https://liveforlivemusic.com/wp-content/uploads/2017/07/Phish-Northernly-Island-Chicago-Ill.-July-14-2017_PRC2519-Edit.jpg'
     }
   },
   { 
@@ -81,7 +85,8 @@ const showData = [
       latitude: 41.867516,
       longitude: -87.609299,
       shows_count: 9,
-      location: 'Chicago, IL' 
+      location: 'Chicago, IL',
+      img: 'https://liveforlivemusic.com/wp-content/uploads/2017/07/Phish-Northernly-Island-Chicago-Ill.-July-14-2017_PRC2519-Edit.jpg'
     } 
   },
   { 
@@ -98,7 +103,8 @@ const showData = [
       latitude: 41.867516,
       longitude: -87.609299,
       shows_count: 9,
-      location: 'Chicago, IL' 
+      location: 'Chicago, IL',
+      img: 'https://liveforlivemusic.com/wp-content/uploads/2017/07/Phish-Northernly-Island-Chicago-Ill.-July-14-2017_PRC2519-Edit.jpg'
     } 
   },
   { 
@@ -115,7 +121,8 @@ const showData = [
       latitude: 39.7804794,
       longitude: -84.0525888,
       shows_count: 3,
-      location: 'Dayton, OH' 
+      location: 'Dayton, OH',
+      img: 'https://2.bp.blogspot.com/-dlnlW1e34qE/WW77G8B0hsI/AAAAAAAAIrI/EjOeG3IDDksBNkGOIi7bD4fgW00VfnxvACLcBGAs/s1600/07-18-17.jpg'
     } 
   },
   { 
@@ -132,7 +139,8 @@ const showData = [
       latitude: 40.443777,
       longitude: -79.962274,
       shows_count: 1,
-      location: 'Pittsburgh, PA' 
+      location: 'Pittsburgh, PA',
+      img: 'https://2ab9pu2w8o9xpg6w26xnz04d-wpengine.netdna-ssl.com/wp-content/uploads/2017/07/yinzgram-1200x609.jpg' 
     } 
   },
   { 
@@ -149,7 +157,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -166,7 +175,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -183,7 +193,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -200,7 +211,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -217,7 +229,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -234,7 +247,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -251,7 +265,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -268,7 +283,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -285,7 +301,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -302,7 +319,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -319,7 +337,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -336,7 +355,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY'
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg'
     } 
   },
   { 
@@ -353,7 +373,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'https://1.bp.blogspot.com/-syPbUr0w3N4/WXmCFrhXoAI/AAAAAAAAI5M/4hjcaLQQ8joRtT_c3YacRdCnMcfkD3KMACLcBGAs/s1600/07-26-17.1.jpg' 
     } 
   },
   { 
@@ -370,7 +391,8 @@ const showData = [
       latitude: 39.8058438,
       longitude: -104.8918854,
       shows_count: 24,
-      location: 'Commerce City, CO' 
+      location: 'Commerce City, CO',
+      img: 'http://coloradist.com/wpcoloradist/wp-content/uploads/2017/09/2017-09-01-phish-dicks-commerce-city-co-19.jpg' 
     } 
   },
   { 
@@ -387,7 +409,8 @@ const showData = [
       latitude: 39.8058438,
       longitude: -104.8918854,
       shows_count: 24,
-      location: 'Commerce City, CO' 
+      location: 'Commerce City, CO',
+      img: 'http://coloradist.com/wpcoloradist/wp-content/uploads/2017/09/2017-09-01-phish-dicks-commerce-city-co-19.jpg' 
     } 
   },
   { 
@@ -404,7 +427,8 @@ const showData = [
       latitude: 39.8058438,
       longitude: -104.8918854,
       shows_count: 24,
-      location: 'Commerce City, CO' 
+      location: 'Commerce City, CO',
+      img: 'http://coloradist.com/wpcoloradist/wp-content/uploads/2017/09/2017-09-01-phish-dicks-commerce-city-co-19.jpg' 
     } 
   },
   { 
@@ -421,7 +445,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'http://www.brooklynvegan.com/files/img/as/phish-msg-2015.jpg' 
     } 
   },
   { 
@@ -438,7 +463,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'http://www.brooklynvegan.com/files/img/as/phish-msg-2015.jpg' 
     } 
   },
   { 
@@ -455,7 +481,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'http://www.brooklynvegan.com/files/img/as/phish-msg-2015.jpg' 
     } 
   },
   { 
@@ -472,7 +499,8 @@ const showData = [
       latitude: 40.7505045,
       longitude: -73.9934387,
       shows_count: 56,
-      location: 'New York, NY' 
+      location: 'New York, NY',
+      img: 'http://www.brooklynvegan.com/files/img/as/phish-msg-2015.jpg' 
     } 
   }
 ]
@@ -613,7 +641,7 @@ const setlistData = {
       title: "Twist",
       position: 14,
       duration: 570984,
-      set_name: "Set 2",,
+      set_name: "Set 2",
       mp3: "https://phish.in/audio/000/031/819/31819.mp3"
     },
     {
@@ -4887,11 +4915,3 @@ module.exports = {
   showData,
   setlistData
 }
-
-
-
-
-
-
-
-
