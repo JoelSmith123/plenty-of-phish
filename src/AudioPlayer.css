@@ -1,0 +1,11 @@
+.current-song-display {
+  float: left;
+}
+
+video {
+  display: none;
+}
+
+.audio-player-controls {
+  margin-top: 20px;
+}

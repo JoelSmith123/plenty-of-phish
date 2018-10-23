@@ -1,0 +1,21 @@
+.Header {
+  position: relative;
+}
+
+.header-plenty {
+  font-family: Bubblegum Sans, cursive;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 50px auto;
+  font-size: 4rem;
+}
+
+.header-of {
+  font-family: Bubblegum Sans, cursive;
+  position: absolute;
+  left: 300px;
+  right: 0;
+  margin: 120px auto;
+  font-size: 3rem;
+}
