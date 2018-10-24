@@ -3,6 +3,7 @@
   bottom: 0;
   background: #FFF;
   width: 100%;
+  height: 120px;
 }
 
 .current-song-display {
@@ -42,7 +43,7 @@ video {
 }
 
 .play-pause {
-  margin: 5px 0 2px;
+  margin: 5px 0 20px;
   width: 50px;
 }
 
@@ -123,14 +124,14 @@ video {
 
 .song-length {
   position: absolute;
-  right: 15px;
-  bottom: -5px;
+  right: 10px;
+  bottom: -21px;
 }
 
 .current-time {
   position: absolute;
-  left: 15px;
-  bottom: -5px;
+  left: 10px;
+  bottom: -21px;
 }
 
 .fa-step-forward,

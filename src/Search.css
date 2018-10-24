@@ -11,7 +11,7 @@ form {
   padding: 20px;
 }
 
-input {
+.search-input {
   width: 500px;
   height: 40px;
   font-size: 1.5rem;
@@ -19,7 +19,8 @@ input {
   box-shadow: 2px 2px 15px #000000;
 }
 
-button {
+.random-btn,
+.view-btn {
   height: 30px;
   padding: 10px 10px 25px;
   border: none;
