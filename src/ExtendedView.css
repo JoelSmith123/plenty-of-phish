@@ -1,5 +1,17 @@
+.song-table {
+  height: 100%;
+  padding: 12px 0;
+}
+
 .song-table-row {
   text-align: left;
   font-size: 1.5rem;
 }
 
+.song-table-position {
+  padding-left: 5px;
+}
+
+.song-table-title {
+  padding-left: 24px;
+}

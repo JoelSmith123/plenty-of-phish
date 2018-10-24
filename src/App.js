@@ -14,7 +14,7 @@ class App extends Component {
       currentSong: null,
       currentSearch: null,
       concertData: showData,
-      setlistData: setlistData 
+      setlistData: setlistData[1903] 
     }
   }
 

@@ -9,14 +9,14 @@ export default class ExtendedView extends Component {
 
   render() {
     return (
-      <table>
+      <table className='song-table'>
         <tbody>
             {
-              this.props.setlist[1903].map((song, index) => {
+              this.props.setlist.map((song, index) => {
                 console.log(song.position)
                 return <tr className='song-table-row' key={index}>
-                          <td>{song.position}</td>
-                          <td>{song.title}</td>
+                          <td className='song-table-position'>{song.position}</td>
+                          <td className='song-table-title'>{song.title}</td>
                         </tr>
               })                            
             }
