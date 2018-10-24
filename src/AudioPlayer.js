@@ -81,7 +81,7 @@ export default class AudioPlayer extends Component {
             <source src={this.props.currentSetlist[this.props.currentSong].mp3} type="audio/mpeg"></source>
           </video>
           <div className="audio-controls">
-            <button onClick={this.togglePlay} type="button" className="play-pause"><i class="fas fa-play"></i></button>
+            <button onClick={this.togglePlay} type="button" className="play-pause"><i className="fas fa-play"></i></button>
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar" />
             {/* <p>{this.props.currentSong.duration}</p> */}
           </div>
