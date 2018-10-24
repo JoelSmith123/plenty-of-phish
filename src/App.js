@@ -36,6 +36,7 @@ class App extends Component {
     this.setState({
       currentSearch: searchValue
     });
+    console.log(this.state.currentSearch)
   }
 
   render() {
