@@ -13,7 +13,8 @@ export default class ExtendedView extends Component {
         <tbody>
           <tr>
             {
-              this.props.setlist.map((song, index) => {
+              Object.keys(this.props.setlist).map((song, index) => {
+                console.log(song)
                 return <th key={index}>{song.title}</th>
               })                            
             }
