@@ -12,7 +12,7 @@ export default class Search extends Component {
   render() {
     return (
       <form>
-        <button>View All</button>
+        <button className="view-btn">View All</button>
         <input 
           type="text"
           placeholder="Search for a Song, Venue, or Show Date"
@@ -26,7 +26,7 @@ export default class Search extends Component {
             console.log(this.state.phishingFor) 
           }} 
         />
-        <button>Random Shows</button>
+        <button className="random-btn">Random Shows</button>
       </form>
     )
   }
