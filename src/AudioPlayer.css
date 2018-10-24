@@ -65,17 +65,16 @@ video {
   -webkit-appearance: none;
   height: 45px;
   width: 45px;
-  transform: scale(-1, 1);
-  background: url(https://cdn2.iconfinder.com/data/icons/african-animals/128/antelope-512.png);
+  background: url(https://www.svgrepo.com/show/93236/gazelle-running-silhouette.svg);
   background-size: cover;
   background-position: center;
-  margin-top: -20px;
+  margin-top: -23px;
   cursor: pointer;
   transition: .2s;
 }
 
 .seek-bar::-webkit-slider-thumb:hover {
-  transform: scale(-1, 1) rotate(-6deg);
+  transform: rotate(-6deg);
   transition: .2s;
 }
 
