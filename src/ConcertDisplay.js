@@ -11,7 +11,7 @@ export default class ConcertDisplay extends Component {
     const {concertData, setlistData} = this.props;
     return (
       <main className="concert-display">
-      {concertData.map(concert => {
+      {this.props.concertData.map(concert => {
         return <Concert concert={concert}/>
       })}
       </main>
