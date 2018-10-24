@@ -4,6 +4,55 @@ import './AudioPlayer.css';
 export default class AudioPlayer extends Component {
   constructor() {
     super();
+    this.state = {
+      dragging: false
+    }
+  }
+
+  togglePlay = () => {
+    let audio = document.querySelector('.audio-clip');
+    let playButton = document.querySelector('.play-pause');
+    if (audio.paused === true) {
+      audio.play();
+      playButton.innerHTML = 'Pause';
+    } else {
+      audio.pause();
+      playButton.innerHTML = 'Play';
+    }
+  }
+
+  updateSeekBar = () => {
+    let audio = document.querySelector('.audio-clip');
+    let seekBar = document.querySelector('.seek-bar');
+    let value = (100 / audio.duration) * audio.currentTime;
+    seekBar.value = value;
+  }
+
+  updateSongPosition = () => {
+    let audio = document.querySelector('.audio-clip');
+    let seekBar = document.querySelector('.seek-bar');
+    let time = audio.duration * (seekBar.value / 100);
+    audio.currentTime = time;
+  }
+
+  handleMouseDown = () => {
+    let audio = document.querySelector('.audio-clip');
+    if (audio.paused === false) {
+      audio.pause();
+      this.setState({
+        dragging: true
+      })
+    }
+  }
+
+  handleMouseUp = () => {
+    let audio = document.querySelector('.audio-clip');
+    if (this.state.dragging === true) {
+      audio.play();
+      this.setState({
+        dragging: false
+      })
+    }
   }
 
   render() {
@@ -15,12 +64,12 @@ export default class AudioPlayer extends Component {
           <p className="audio-player-location">Location</p>
         </section>
         <section className="audio-player-controls">
-          <video>
-            <source src="https://phish.in/audio/000/031/827/31827.mp3" type="audio/mpeg"></source>
+          <video className="audio-clip" onTimeUpdate={this.updateSeekBar}>
+            <source src={this.props.currentSong} type="audio/mpeg"></source>
           </video>
           <div className="audio-controls">
-            <button type="button" className="play-pause">Play</button>
-            <input type="range" className="seek-bar" value="0" />
+            <button onClick={this.togglePlay} type="button" className="play-pause">Play</button>
+            <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar" />
           </div>
         </section>
       </footer>

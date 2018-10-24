@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentSong: null,
+      currentSong: 'https://phish.in/audio/000/031/827/31827.mp3',
       currentSearch: null,
       concertData: showData,
       setlistData: setlistData 
