@@ -611,6 +611,7 @@ const setlistData = {
       show_id: 1903,
       show_date: "2017-01-13",
       title: "The Wedge",
+      position: 11,
       duration: 516441,
       mp3: "https://phish.in/audio/000/031/816/31816.mp3"
     },
