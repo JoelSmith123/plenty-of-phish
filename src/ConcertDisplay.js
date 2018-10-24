@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ConcertDisplay.css';
+import Concert from './Concert.js';
 
 export default class ConcertDisplay extends Component {
   constructor() {
@@ -7,9 +8,12 @@ export default class ConcertDisplay extends Component {
   }
 
   render() {
-    return(
+    const {concertData, setlistData} = this.props;
+    return (
       <main className="concert-display">
-
+      {concertData.map(concert => {
+        return <Concert concert={concert}/>
+      })}
       </main>
     )
   }

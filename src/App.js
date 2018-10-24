@@ -4,8 +4,7 @@ import Header from './Header';
 import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
-import { setlistData, showData } from './data/data.js';
-
+import {showData, setlistData} from './data/data.js';
 
 class App extends Component {
   constructor() {
