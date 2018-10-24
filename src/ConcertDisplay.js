@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ConcertDisplay.css';
+import ExtendedView from './ExtendedView';
 
 export default class ConcertDisplay extends Component {
   constructor() {
@@ -9,7 +10,7 @@ export default class ConcertDisplay extends Component {
   render() {
     return(
       <main className="concert-display">
-
+        <ExtendedView setlist={this.props.setlistData} />
       </main>
     )
   }
