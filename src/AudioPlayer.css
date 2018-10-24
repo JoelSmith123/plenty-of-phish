@@ -1,5 +1,26 @@
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  background: #FFF;
+  width: 100%;
+}
+
 .current-song-display {
+  position: absolute;
   float: left;
+  text-align: left;
+  margin: 22px 20px 20px;
+}
+
+.audio-player-song {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.audio-player-song ~ p {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 video {
@@ -7,5 +28,90 @@ video {
 }
 
 .audio-player-controls {
-  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.audio-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px;
+}
+
+.play-pause {
+  margin: 5px 0 2px;
+  width: 50px;
+}
+
+.seek-bar {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 500px;
+}
+
+.seek-bar::-webkit-slider-runnable-track {
+  background: linear-gradient(#89dfff, #3eb4e0);
+  height: 8px;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 45px;
+  width: 45px;
+  transform: scale(-1, 1);
+  background: url(https://cdn2.iconfinder.com/data/icons/african-animals/128/antelope-512.png);
+  background-size: cover;
+  background-position: center;
+  margin-top: -20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.seek-bar::-webkit-slider-thumb:hover {
+  transform: scale(-1, 1) rotate(-6deg);
+  transition: .2s;
+}
+
+.seek-bar:focus {
+  outline: none;
+}
+
+.play-pause {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid #3eb4e0;
+  outline: none;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.play-pause:hover {
+  transform: scale(1.05);
+  border: 3.5px solid #89dfff;
+  transition: .4s;
+}
+
+.play-pause:hover .fa-play,
+.play-pause:hover .fa-pause {
+  color: #89dfff;
+  transition: .4s;
+}
+
+.fa-play {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  color: #3eb4e0;
+  transition: .4s;
+}
+
+.fa-pause {
+  font-size: 1.5rem;
+  margin-left: 2px;
+  color: #3eb4e0;
+  transition: .4s;
 }

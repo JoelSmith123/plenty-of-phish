@@ -14,10 +14,10 @@ export default class AudioPlayer extends Component {
     let playButton = document.querySelector('.play-pause');
     if (audio.paused === true) {
       audio.play();
-      playButton.innerHTML = 'Pause';
+      playButton.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
       audio.pause();
-      playButton.innerHTML = 'Play';
+      playButton.innerHTML = '<i class="fas fa-play">';
     }
   }
 
@@ -25,7 +25,6 @@ export default class AudioPlayer extends Component {
     let audio = document.querySelector('.audio-clip');
     let seekBar = document.querySelector('.seek-bar');
     let value = (100 / audio.duration) * audio.currentTime;
-    console.log(seekBar.value)
     if (value === 100) {
       this.props.goToNextSong(true);
       audio.load();
@@ -78,11 +77,11 @@ export default class AudioPlayer extends Component {
           <p className="audio-player-location">{this.props.currentShow.venue.location}</p>
         </section>
         <section className="audio-player-controls">
-          <video className="audio-clip" onTimeUpdate={this.updateSeekBar} autoPlay>
+          <video className="audio-clip" onTimeUpdate={this.updateSeekBar}>
             <source src={this.props.currentSetlist[this.props.currentSong].mp3} type="audio/mpeg"></source>
           </video>
           <div className="audio-controls">
-            <button onClick={this.togglePlay} type="button" className="play-pause">Play</button>
+            <button onClick={this.togglePlay} type="button" className="play-pause"><i class="fas fa-play"></i></button>
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar" />
             {/* <p>{this.props.currentSong.duration}</p> */}
           </div>
