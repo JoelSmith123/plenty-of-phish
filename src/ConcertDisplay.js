@@ -3,8 +3,8 @@ import './ConcertDisplay.css';
 import Concert from './Concert.js';
 
 export default class ConcertDisplay extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   render() {

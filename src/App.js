@@ -5,16 +5,29 @@ import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
 import {showData, setlistData} from './data/data.js';
-import Concert from './Concert.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentSong: null,
+      currentSong: 0,
+      currentSetlist: setlistData[1903],
+      currentShow: showData[0],
       currentSearch: null,
       concertData: showData,
-      setlistData: setlistData 
+      setlistData: setlistData
+    }
+  }
+
+  goToNextSong = (isSongFinished) => {
+    if (isSongFinished === 1) {
+      this.setState({
+        currentSong: this.state.currentSong + 1
+      })
+    } else {
+      this.setState({
+        currentSong: this.state.currentSong - 1
+      })
     }
   }
 
@@ -32,7 +45,10 @@ class App extends Component {
         <Search updateCurrentSong={this.updateCurrentSong}/>
         <ConcertDisplay concertData={this.state.concertData}
                         setlistData={this.state.setlistData}/>
-        <AudioPlayer currentSong={this.state.currentSong}/>
+        <AudioPlayer currentSong={this.state.currentSong}
+                      currentSetlist={this.state.currentSetlist}
+                      currentShow={this.state.currentShow}
+                      goToNextSong={this.goToNextSong}/>
       </div>
     );
   }

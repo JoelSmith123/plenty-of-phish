@@ -13,7 +13,8 @@ export default class Search extends Component {
     return (
       <form>
         <button className="view-btn">View All</button>
-        <input 
+        <input
+          className="search-input" 
           type="text"
           placeholder="Search for a Song, Venue, or Show Date"
           value={this.state.phishingFor} 
