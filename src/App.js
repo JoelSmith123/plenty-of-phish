@@ -4,17 +4,27 @@ import Header from './Header';
 import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
-import showData from './data/data.js';
-import setlistData from './data/data.js';
+import { setlistData, showData } from './data/data.js';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentSong: 'https://phish.in/audio/000/031/827/31827.mp3',
+      currentSong: 0,
+      currentSetlist: setlistData[1903],
+      currentShow: showData[0],
       currentSearch: null,
       concertData: showData,
-      setlistData: setlistData 
+      setlistData: setlistData
+    }
+  }
+
+  goToNextSong = (isSongFinished) => {
+    if (isSongFinished) {
+      this.setState({
+        currentSong: this.state.currentSong + 1
+      })
     }
   }
 
@@ -31,7 +41,10 @@ class App extends Component {
         <Search updateCurrentSong={this.updateCurrentSong}/>
         <ConcertDisplay concertData={this.state.concertData}
                         setlistData={this.state.setlistData}/>
-        <AudioPlayer currentSong={this.state.currentSong}/>
+        <AudioPlayer currentSong={this.state.currentSong}
+                      currentSetlist={this.state.currentSetlist}
+                      currentShow={this.state.currentShow}
+                      goToNextSong={this.goToNextSong}/>
       </div>
     );
   }

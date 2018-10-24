@@ -25,6 +25,12 @@ export default class AudioPlayer extends Component {
     let audio = document.querySelector('.audio-clip');
     let seekBar = document.querySelector('.seek-bar');
     let value = (100 / audio.duration) * audio.currentTime;
+    console.log(seekBar.value)
+    if (value === 100) {
+      this.props.goToNextSong(true);
+      audio.load();
+      audio.play();
+    }
     seekBar.value = value;
   }
 
@@ -55,21 +61,30 @@ export default class AudioPlayer extends Component {
     }
   }
 
+  // convertTime = (ms) => {
+  //   var milliseconds = parseInt(ms);
+  //   var hours = Math.floor(milliseconds / 3600000);
+  //   var minutes = Math.floor((milliseconds - (hours * 3600000)) / 60000);
+  //   var seconds = parseInt((milliseconds - (hours * 3600000) - (minutes * 60000)) / 1000);
+  //   return `${minutes} : ${seconds}`
+  // }
+
   render() {
     return (
       <footer className='audio-player'>
         <section className="current-song-display">
-          <h3 className="audio-player-song">Song Name</h3>
-          <p className="audio-player-venue">Venue</p>
-          <p className="audio-player-location">Location</p>
+          <h3 className="audio-player-song">{this.props.currentSetlist[this.props.currentSong].title}</h3>
+          <p className="audio-player-venue">{this.props.currentShow.venue.name}</p>
+          <p className="audio-player-location">{this.props.currentShow.venue.location}</p>
         </section>
         <section className="audio-player-controls">
-          <video className="audio-clip" onTimeUpdate={this.updateSeekBar}>
-            <source src={this.props.currentSong} type="audio/mpeg"></source>
+          <video className="audio-clip" onTimeUpdate={this.updateSeekBar} autoPlay>
+            <source src={this.props.currentSetlist[this.props.currentSong].mp3} type="audio/mpeg"></source>
           </video>
           <div className="audio-controls">
             <button onClick={this.togglePlay} type="button" className="play-pause">Play</button>
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar" />
+            {/* <p>{this.props.currentSong.duration}</p> */}
           </div>
         </section>
       </footer>
