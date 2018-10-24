@@ -21,9 +21,13 @@ class App extends Component {
   }
 
   goToNextSong = (isSongFinished) => {
-    if (isSongFinished) {
+    if (isSongFinished === 1) {
       this.setState({
         currentSong: this.state.currentSong + 1
+      })
+    } else {
+      this.setState({
+        currentSong: this.state.currentSong - 1
       })
     }
   }

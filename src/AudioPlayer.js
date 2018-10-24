@@ -26,7 +26,7 @@ export default class AudioPlayer extends Component {
     let seekBar = document.querySelector('.seek-bar');
     let value = (100 / audio.duration) * audio.currentTime;
     if (value === 100) {
-      this.props.goToNextSong(true);
+      this.props.goToNextSong(1);
       audio.load();
       audio.play();
     }
@@ -72,6 +72,20 @@ export default class AudioPlayer extends Component {
     return `${minutes}:${seconds}`
   }
 
+  changeSong(dir) {
+    let audio = document.querySelector('.audio-clip');
+    audio.pause();
+    if (dir === 1) {
+      this.props.goToNextSong(1);
+      audio.load();
+      audio.play();
+    } else {
+      this.props.goToNextSong(-1);
+      audio.load();
+      audio.play();
+    }
+  }
+
   render() {
     return (
       <footer className='audio-player'>
@@ -86,7 +100,11 @@ export default class AudioPlayer extends Component {
           </video>
           <div className="audio-controls">
             <p className="current-time">0:00</p>
-            <button onClick={this.togglePlay} type="button" className="play-pause"><i className="fas fa-play"></i></button>
+            <div>
+              <i className="fas fa-step-backward" onClick={() => this.changeSong(-1)}></i>
+              <button onClick={this.togglePlay} type="button" className="play-pause"><i className="fas fa-play"></i></button>
+              <i className="fas fa-step-forward" onClick={() => this.changeSong(1)}></i>
+            </div>
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar" />
             <p className="song-length">{this.convertTime(this.props.currentSetlist[this.props.currentSong].duration)}</p>
           </div>
