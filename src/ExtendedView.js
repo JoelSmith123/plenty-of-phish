@@ -16,7 +16,7 @@ export default class ExtendedView extends Component {
                 console.log(song.position)
                 return <tr className='song-table-row' key={index}>
                           <td className='song-table-position'>{song.position}</td>
-                          <td className='song-table-title'>{song.title}</td>
+                          <td className='song-table-title' >{song.title}</td>
                         </tr>
               })                            
             }
