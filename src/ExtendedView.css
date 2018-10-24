@@ -1,3 +1,7 @@
+.display-mode-none {
+  display: none;
+}
+
 .song-table {
   height: 100%;
   padding: 12px 0;
@@ -12,6 +16,11 @@
   color: #6666ff;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.far {
+  font-size: 2rem;
+  padding-top: 6px;
 }
 
 .song-table-position {

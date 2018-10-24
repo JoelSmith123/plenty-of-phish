@@ -30,7 +30,8 @@ class App extends Component {
         <Header />
         <Search updateCurrentSong={this.updateCurrentSong}/>
         <ConcertDisplay concertData={this.state.concertData}
-                        setlistData={this.state.setlistData}/>
+                        setlistData={this.state.setlistData}
+                        updateCurrentSong={this.updateCurrentSong}/>
         <AudioPlayer currentSong={this.state.currentSong}/>
       </div>
     );

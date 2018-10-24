@@ -4,8 +4,10 @@ import './ExtendedView.css';
 export default class ExtendedView extends Component {
   constructor() {
     super()
+    this.state = {
+      hover: false
+    }
   }
-
 
   render() {
     return (
@@ -13,10 +15,10 @@ export default class ExtendedView extends Component {
         <tbody>
             {
               this.props.setlist.map((song, index) => {
-                console.log(song.position)
-                return <tr className='song-table-row' key={index}>
-                          <td className='song-table-position'>{song.position}</td>
-                          <td className='song-table-title' >{song.title}</td>
+                return <tr className='song-table-row' onMouseEnter={(e) => this.setState({hover: true})} onMouseLeave={(e) => this.setState({hover: false})} key={index}>
+                          <td className={ this.state.hover ? 'far fa-play-circle' : 'display-mode-none' }></td>
+                          <td className={ this.state.hover ? 'display-mode-none' : 'song-table-position' }>{song.position}</td>
+                          <td className='song-table-title' onClick={(e) => this.props.updateCurrentSong(song)}>{song.title}</td>
                         </tr>
               })                            
             }

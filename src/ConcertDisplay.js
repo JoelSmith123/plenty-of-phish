@@ -10,7 +10,7 @@ export default class ConcertDisplay extends Component {
   render() {
     return(
       <main className="concert-display">
-        <ExtendedView setlist={this.props.setlistData} />
+        <ExtendedView setlist={this.props.setlistData} updateCurrentSong={this.props.updateCurrentSong} />
       </main>
     )
   }
