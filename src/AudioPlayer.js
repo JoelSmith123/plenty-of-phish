@@ -37,6 +37,7 @@ export default class AudioPlayer extends Component {
       this.props.goToNextSong(1);
       audio.load();
       audio.play();
+      playButton.innerHTML = '<i class="fas fa-pause"></i>'
     } else if (value === 100 && this.props.currentSong === this.props.currentSetlist.length - 1) {
       playButton.innerHTML = '<i class="fas fa-play"></i>'
     } else {
