@@ -4,7 +4,6 @@ import Header from './Header';
 import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
-import {showData, setlistData} from './data/data.js';
 
 
 class App extends Component {
@@ -21,6 +20,17 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
+      .then(response => response.json()) 
+      .then(concertData => this.setState({concertData: concertData.phishShows}))
+      .catch(error => console.log(error));
+    fetch('https://whateverly-datasets.herokuapp.com/api/v1/setLists')
+      .then(response => response.json())
+      .then(setListData => this.setState({setlistData: setListData.setLists}))
+      .catch(error => console.log(error));
+  }
+
   goToNextSong = (isSongFinished) => {
     if (isSongFinished === 1) {
       this.setState({
@@ -33,7 +43,7 @@ class App extends Component {
     }
   }
 
-  updateCurrentSong = (searchValue) => {
+  updateCurrentDisplay = (searchValue) => {
     this.setState({
       currentSearch: searchValue
     });
@@ -52,9 +62,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Search updateCurrentSong={this.updateCurrentSong}/>
+        <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
                         setlistData={this.state.setlistData}
+                        currentSearch={this.state.currentSearch}/>
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}/>
         <AudioPlayer currentSong={this.state.currentSong}
@@ -62,7 +73,7 @@ class App extends Component {
                       currentShow={this.state.currentShow}
                       goToNextSong={this.goToNextSong}/>
       </div>
-    );
+    )
   }
 }
 
