@@ -7,8 +7,7 @@ export default class Search extends Component {
   }
 
   goPhishing = () => {
-    this.props.updateCurrentSong(document.querySelector('.search-input').value.toLowerCase())
-    console.log(document.querySelector('.search-input').value) 
+    this.props.updateCurrentDisplay(document.querySelector('.search-input').value.toLowerCase())
   }
 
   render() {
@@ -25,5 +24,4 @@ export default class Search extends Component {
       </form>
     )
   }
-
 }

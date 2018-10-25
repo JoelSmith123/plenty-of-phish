@@ -21,7 +21,6 @@ export default class ConcertDisplay extends Component {
       return (
         <main className="concert-display">
         {this.props.concertData.filter(concert => {
-          console.log(currentSearch)
           return concert.venue.name.toLowerCase().includes(currentSearch) || concert.date.includes(currentSearch) || concert.venue.location.toLowerCase().includes(currentSearch)
           }).map(concert => {
           return <Concert concert={concert}/>

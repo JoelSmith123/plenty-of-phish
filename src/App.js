@@ -41,18 +41,17 @@ class App extends Component {
     }
   }
 
-  updateCurrentSong = (searchValue) => {
+  updateCurrentDisplay = (searchValue) => {
     this.setState({
       currentSearch: searchValue
     });
-    console.log(this.state.currentSearch)
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Search updateCurrentSong={this.updateCurrentSong}/>
+        <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
                         setlistData={this.state.setlistData}
                         currentSearch={this.state.currentSearch}/>
