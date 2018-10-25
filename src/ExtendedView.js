@@ -23,7 +23,7 @@ export default class ExtendedView extends Component {
       <table className='song-table'>
         <tbody>
             {
-              this.props.setlist[1903].map((song, index) => {
+              this.props.setlist.map((song, index) => {
                 return <tr className='song-table-row' key={index}>
                           <td className='song-table-position'>{song.position}</td>
                           <td className='song-table-title' onClick={(e) => this.props.updateCurrentSongIndex(index)}>{song.title}</td>
