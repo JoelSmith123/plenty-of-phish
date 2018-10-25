@@ -11,7 +11,9 @@ export default class AudioPlayer extends Component {
 
   componentDidMount() {
     const seekBar = document.querySelector('.seek-bar');
+    const volumeControl = document.querySelector('.volume-control');
     seekBar.value = 0;
+    volumeControl.value = 100;
   }
 
   togglePlay = () => {
@@ -106,6 +108,13 @@ export default class AudioPlayer extends Component {
     }
   }
 
+  changeVolume = () => {
+    const audio = document.querySelector('.audio-clip');
+    const volumeControl = document.querySelector('.volume-control');
+    let volume = volumeControl.value / 100;
+    audio.volume = volume;
+  }
+
   render() {
     return (
       <footer className='audio-player'>
@@ -128,6 +137,7 @@ export default class AudioPlayer extends Component {
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar"  min="0" max="0"/>
             <p className="song-length">{this.convertTime(this.props.currentSetlist[this.props.currentSong].duration + 2)}</p>
           </div>
+          <input type="range" className="volume-control" onChange={this.changeVolume} min="0" max="100" />
         </section>
       </footer>
     )

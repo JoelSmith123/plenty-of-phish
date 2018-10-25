@@ -74,11 +74,12 @@ video {
 }
 
 .seek-bar::-webkit-slider-thumb:hover {
-  transform: rotate(-6deg);
+  transform: rotate(-4deg);
   transition: .2s;
 }
 
-.seek-bar:focus {
+.seek-bar:focus,
+.volume-control:focus {
   outline: none;
 }
 
@@ -140,4 +141,50 @@ video {
   color: #3eb4e0;
   transition: .4s;
   cursor: pointer;
+}
+
+.volume-control::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: -9px;
+  left: -30px;
+  background: url(http://www.residencyunlimited.org/wp-content/uploads/2011/05/SpeakerIcon.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.volume-control {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 130px;
+  position: absolute;
+  right: 40px;
+  bottom: 55px; 
+}
+
+.volume-control::-webkit-slider-runnable-track {
+  background: linear-gradient(#89dfff, #3eb4e0);
+  height: 6px;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 45px;
+  width: 35px;
+  background: url(https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/073.svg);
+  background-size: 45px 45px;
+  background-position: center;
+  margin-top: -12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.volume-control::-webkit-slider-thumb:hover {
+  transform: rotate(3deg);
+  transition: .2s;
 }
