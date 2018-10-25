@@ -1,26 +1,44 @@
-.Header {
+header {
+  color: rgb(62, 179, 223);
   position: relative;
+  text-shadow: 1.5px 3px 2px #282828;
+  z-index: 1;
 }
 
-header img {
+header::before {
+  background: url(https://expo.advance.net/img/eaa9c7e6e3/width960/977_ap110702155984.jpeg);
+  background-position: 0% 34%;
+  bottom: 0;
+  content: '';
+  filter: grayscale(100%);
+  left: 0;
+  opacity: .35;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.header-img {
+  filter: drop-shadow(0 0 40px #ffffff);
   height: 160px;
   margin: 60px auto 20px;
+  position: relative;
 }
 
 .header-plenty {
   font-family: Bubblegum Sans, cursive;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 6px auto;
   font-size: 3rem;
+  left: 0;
+  margin: 6px auto;
+  position: absolute;
+  right: 0;
 }
 
 .header-of {
   font-family: Bubblegum Sans, cursive;
-  position: absolute;
-  left: 150px;
-  right: 0;
-  margin: 50px auto;
   font-size: 2rem;
+  left: 150px;
+  margin: 50px auto;
+  position: absolute;
+  right: 0;
 }

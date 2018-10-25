@@ -4,6 +4,7 @@ import Header from './Header';
 import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
+import {showData, setlistData} from './data/data.js';
 
 
 class App extends Component {
@@ -18,17 +19,6 @@ class App extends Component {
       concertData: [],
       setlistData: {1903: ['nothing': 'void', 'nothing': 'void', 'nothing': 'void']}
     }
-  }
-
-  componentDidMount() {
-    fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
-      .then(response => response.json()) 
-      .then(concertData => this.setState({concertData: concertData.phishShows}))
-      .catch(error => console.log(error));
-    fetch('https://whateverly-datasets.herokuapp.com/api/v1/setLists')
-      .then(response => response.json())
-      .then(setListData => this.setState({setlistData: setListData.setLists}))
-      .catch(error => console.log(error));
   }
 
   goToNextSong = (isSongFinished) => {

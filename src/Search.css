@@ -9,29 +9,41 @@ form {
   align-items: center;
   background: #3a3a3a;
   padding: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
 }
 
 .search-input {
-  width: 500px;
-  height: 40px;
-  font-size: 1.5rem;
-  margin-left: 45px;
+  border-radius: 5px;
+  border: none;
   box-shadow: 2px 2px 15px #000000;
+  font-size: 1.5rem;
+  height: 40px;
+  margin-left: 25px;
+  outline: none;
+  width: 500px;
+}
+
+.search-input::placeholder {
+  padding-left: 10px;
 }
 
 .random-btn,
 .view-btn {
-  height: 30px;
-  padding: 10px 10px 25px;
+  background: rgb(62, 179, 223);
+  border-radius: 5px;
   border: none;
   box-shadow: 2px 2px 15px #000000;
   color: #ffffff;
-  background: #4c8299;
   font-size: 1.2em;
+  height: 30px;
+  padding: 10px 10px 25px;
 }
 
 .view-btn {
   margin-left: 5vw;
+  width: 120px;
 }
 
 .random-btn {
