@@ -93,6 +93,14 @@ video { display: none }
   transition: .4s;
 }
 
+.play-pause:hover .fa-play {
+  margin-left: 3px;
+}
+
+.play-pause:hover .fa-pause {
+  margin-left: -1px;
+}
+
 .fa-play {
   @include play-pause-icons(5px);
 }
@@ -120,6 +128,11 @@ video { display: none }
   color: #3eb4e0;
   transition: .4s;
   cursor: pointer;
+}
+
+.fa-step-backward:hover,
+.fa-step-forward:hover {
+  transform: scale(1);
 }
 
 .seek-bar {
