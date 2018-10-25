@@ -4,9 +4,11 @@ import './Search.css';
 export default class Search extends Component {
   constructor() {
     super();
-    this.state = {
-      phishingFor: ''
-    }
+  }
+
+  goPhishing = () => {
+    this.props.updateCurrentSong(document.querySelector('.search-input').value.toLowerCase())
+    console.log(document.querySelector('.search-input').value) 
   }
 
   render() {
@@ -17,15 +19,7 @@ export default class Search extends Component {
           className="search-input" 
           type="text"
           placeholder="Search for a Song, Venue, or Show Date"
-          value={this.state.phishingFor} 
-          onChange={ (e) => {
-            this.setState({
-              phishingFor: e.target.value
-            })
-            e.preventDefault();
-            this.props.updateCurrentSong(this.state.phishingFor)
-            console.log(this.state.phishingFor) 
-          }} 
+          onChange={this.goPhishing} 
         />
         <button className="random-btn">Random Shows</button>
       </form>
