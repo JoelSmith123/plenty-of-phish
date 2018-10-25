@@ -1,0 +1,198 @@
+@mixin slider-track($height) {
+  background: linear-gradient(#89dfff, #3eb4e0);
+  height: $height;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+@mixin slider-thumb($width, $backgroundURL) {
+  -webkit-appearance: none;
+  height: 45px;
+  width: $width;
+  background: $backgroundURL;
+  background-position: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+@mixin play-pause-icons($margin) {
+  font-size: 1.5rem;
+  margin-left: $margin;
+  color: #3eb4e0;
+  transition: .4s;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  background: #FFF;
+  width: 100%;
+  height: 120px;
+}
+
+.current-song-display {
+  position: absolute;
+  float: left;
+  text-align: left;
+  margin: 22px 20px 20px;
+}
+
+.audio-player-song {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.audio-player-song ~ p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+video { display: none }
+
+.audio-player-controls { margin: 0 auto }
+
+.audio-controls {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px;
+  width: 600px;
+}
+
+.play-pause {
+  margin: 5px 0 20px;
+  width: 50px;
+}
+
+.play-pause {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid #3eb4e0;
+  outline: none;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.play-pause:hover {
+  transform: scale(1.05);
+  border: 3.5px solid #89dfff;
+  transition: .4s;
+}
+
+.fa-step-backward:hover,
+.fa-step-forward:hover {
+  color: #89dfff;
+  transition: .4s;
+}
+
+.play-pause:hover .fa-play,
+.play-pause:hover .fa-pause {
+  @extend .fa-step-backward:hover;
+  transform: scale(1.05);
+}
+
+.play-pause:hover .fa-play {
+  margin-left: 3px;
+}
+
+.play-pause:hover .fa-pause {
+  margin-left: -1px;
+}
+
+.fa-play {
+  @include play-pause-icons(5px);
+}
+
+.fa-pause {
+  @include play-pause-icons(1px);
+}
+
+.song-length {
+  position: absolute;
+  right: 10px;
+  bottom: -21px;
+}
+
+.current-time {
+  position: absolute;
+  left: 10px;
+  bottom: -21px;
+}
+
+.fa-step-forward,
+.fa-step-backward {
+  font-size: 1.5rem;
+  margin: 0 20px;
+  color: #3eb4e0;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.seek-bar {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 500px;
+  outline: none;
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track(8px);
+  }
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb(45px, url(https://www.svgrepo.com/show/93236/gazelle-running-silhouette.svg));
+    background-size: cover;
+    margin-top: -23px;
+  }
+
+  &::-webkit-slider-thumb:hover {
+    transform: rotate(-4deg);
+    transition: .2s;
+  }
+
+}
+
+.volume-control {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 130px;
+  position: absolute;
+  right: 40px;
+  bottom: 55px;
+  outline: none;
+
+  &::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: -9px;
+    left: -30px;
+    background: url(http://www.residencyunlimited.org/wp-content/uploads/2011/05/SpeakerIcon.png);
+    background-size: cover;
+    background-position: center;
+  } 
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track(6px);
+  }
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb(35px, url(https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/073.svg));
+    background-size: 45px 45px;
+    margin-top: -12px;
+  }
+
+  &::-webkit-slider-thumb:hover {
+    transform: rotate(3deg);
+    transition: .2s;
+  }
+
+}
+
+
+
