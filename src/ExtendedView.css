@@ -5,6 +5,7 @@
 .song-table {
   height: 100%;
   padding: 12px 0;
+  width: 100%;
 }
 
 .song-table-row {
@@ -29,5 +30,9 @@
 
 .song-table-title {
   padding-left: 24px;
+}
+
+.song-table-duration {
+  text-align: right;
 }
 
