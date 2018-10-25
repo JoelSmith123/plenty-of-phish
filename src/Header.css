@@ -1,50 +1,44 @@
 header {
-  position: relative;
-  /*background: rgba(74, 1, 96, .9);*/
-  /*color: #ffffff;*/
   color: rgb(62, 179, 223);
+  position: relative;
   text-shadow: 1.5px 3px 2px #282828;
-  z-index: 2;
+  z-index: 1;
 }
 
 header::before {
   background: url(https://expo.advance.net/img/eaa9c7e6e3/width960/977_ap110702155984.jpeg);
-  filter: grayscale(100%);
-  content: '';
-  position: absolute;
-  top: 0;
+  background-position: 0% 34%;
   bottom: 0;
+  content: '';
+  filter: grayscale(100%);
   left: 0;
-  right: 0;
-  z-index: 1;
   opacity: .35;
-  background-position: 0% 33%;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .header-img {
+  filter: drop-shadow(0 0 40px #ffffff);
   height: 160px;
   margin: 60px auto 20px;
-  z-index: 3;
   position: relative;
-  filter: drop-shadow(0 0 50px #fff);
 }
 
 .header-plenty {
   font-family: Bubblegum Sans, cursive;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 6px auto;
   font-size: 3rem;
-  z-index: 3;
+  left: 0;
+  margin: 6px auto;
+  position: absolute;
+  right: 0;
 }
 
 .header-of {
   font-family: Bubblegum Sans, cursive;
-  position: absolute;
-  left: 150px;
-  right: 0;
-  margin: 50px auto;
   font-size: 2rem;
-  z-index: 3;
+  left: 150px;
+  margin: 50px auto;
+  position: absolute;
+  right: 0;
 }
