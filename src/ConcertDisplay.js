@@ -12,7 +12,7 @@ export default class ConcertDisplay extends Component {
     const {concertData, setlistData} = this.props;
     return (
       <main className="concert-display">
-        <ExtendedView setlist={this.props.setlistData} updateCurrentSongIndex={this.props.updateCurrentSongIndex} />
+        <ExtendedView setlist={this.props.currentSetlist} updateCurrentSongIndex={this.props.updateCurrentSongIndex} />
         {/*this.props.concertData.map(concert => {
           return <Concert concert={concert}/>
         })*/}

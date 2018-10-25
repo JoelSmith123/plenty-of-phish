@@ -8,12 +8,27 @@ export default class AudioPlayer extends Component {
       dragging: false
     }
   }
-
+  
   componentDidMount() {
     const seekBar = document.querySelector('.seek-bar');
     const volumeControl = document.querySelector('.volume-control');
     seekBar.value = 0;
     volumeControl.value = 100;
+  }
+
+  componentDidUpdate() {
+    const audio = document.querySelector('.audio-clip');
+    const seekBar = document.querySelector('.seek-bar');
+    const playButton = document.querySelector('.play-pause');
+    playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    audio.currentTime = 0;
+    seekBar.value = 0;
+    audio.load();
+    var isPlaying = audio.currentTime > 0 && !audio.paused && !audio.ended 
+    && audio.readyState > 2;
+    if (!isPlaying) {
+     audio.play();
+    }
   }
 
   togglePlay = () => {
@@ -96,12 +111,12 @@ export default class AudioPlayer extends Component {
       this.props.goToNextSong(1);
       audio.load();
       audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
+      playButton.innerHTML = '<i class="fas fa-pause"></i>';
     } else if (dir === -1 && this.props.currentSong > 0) {
       this.props.goToNextSong(-1);
       audio.load();
       audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
+      playButton.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
       seekBar.value = 0;
       audio.currentTime = 0;
