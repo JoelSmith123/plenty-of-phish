@@ -1,9 +1,13 @@
 .concert-display {
   width: 100%;
-  height: 1000px;
-  margin-top: 20px;
+  padding: 35px 15px 135px 15px;
   background: url(http://thephunion.com/wp-content/uploads/2013/04/Umphreys.jpg);
   background-size: cover;
   background-position: center;
   opacity: .4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22%, 1fr));
+  grid-gap: 5px;
+  justify-content: space-between;
+  grid-auto-flow: dense;
 }
