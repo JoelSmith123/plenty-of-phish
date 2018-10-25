@@ -17,6 +17,13 @@ form {
   font-size: 1.5rem;
   margin-left: 45px;
   box-shadow: 2px 2px 15px #000000;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.search-input::placeholder {
+  padding-left: 10px;
 }
 
 .random-btn,
@@ -26,8 +33,9 @@ form {
   border: none;
   box-shadow: 2px 2px 15px #000000;
   color: #ffffff;
-  background: #4c8299;
+  background: rgb(62, 179, 223);
   font-size: 1.2em;
+  border-radius: 5px;
 }
 
 .view-btn {
