@@ -7,16 +7,30 @@ export default class ConcertDisplay extends Component {
   constructor() {
     super();
   }
-
+  
   render() {
-    const {concertData, setlistData} = this.props;
-    return (
-      <main className="concert-display">
-        <ExtendedView setlist={this.props.setlistData} updateCurrentSongIndex={this.props.updateCurrentSongIndex} />
-        {/*this.props.concertData.map(concert => {
+    const {concertData, setlistData, currentSearch} = this.props;
+    if(currentSearch === null) {
+      return (
+        <main className="concert-display">
+//         <ExtendedView setlist={this.props.setlistData} updateCurrentSongIndex={this.props.updateCurrentSongIndex} />
+        {this.props.concertData.map(concert => {
           return <Concert concert={concert}/>
-        })*/}
-      </main>
-    )
+          })}
+        </main>
+      )
+    } else {
+      return (
+        <main className="concert-display">
+        {this.props.concertData.filter(concert => {
+          return concert.venue.name.toLowerCase().includes(currentSearch) || concert.date.includes(currentSearch) || concert.venue.location.toLowerCase().includes(currentSearch)
+          }).map(concert => {
+          return <Concert concert={concert}/>
+          })}
+        </main>
+      )
+    }
   }
 }
+
+
