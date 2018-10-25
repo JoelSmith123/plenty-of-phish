@@ -1,7 +1,3 @@
-.display-mode-none {
-  display: none;
-}
-
 .song-table {
   height: 100%;
   padding: 12px 0;
@@ -11,10 +7,10 @@
 .song-table-row {
   text-align: left;
   font-size: 1.5rem;
-}
 
-.song-table-row:hover {
-  color: #6666ff;
+  &:hover {
+    color: #6666ff;
+  }
 }
 
 .song-table-position {
@@ -23,12 +19,12 @@
 
 .song-table-title {
   padding-left: 24px;
-}
 
-.song-table-title:hover {
-  color: #6666ff;
-  cursor: pointer;
-  text-decoration: underline;
+  &:hover {
+    color: #6666ff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .song-table-duration {

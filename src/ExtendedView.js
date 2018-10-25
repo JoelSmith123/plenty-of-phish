@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ExtendedView.css';
+import './main.scss';
 
 export default class ExtendedView extends Component {
   constructor() {
