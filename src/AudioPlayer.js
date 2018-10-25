@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AudioPlayer.css';
+import './main.scss';
 
 export default class AudioPlayer extends Component {
   constructor() {
