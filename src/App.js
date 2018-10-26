@@ -29,6 +29,17 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
+
+  updateCurrentSetlist = (id) => {
+    let show = this.state.concertData.find((concert) => {
+      return concert.id === id;
+    })
+    this.setState({
+      currentSetlist: this.state.setlistData[id],
+      currentShow: show
+    });
+  }
+
   goToNextSong = (isSongFinished) => {
     if (isSongFinished === 1) {
       this.setState({
@@ -41,7 +52,7 @@ class App extends Component {
     }
   }
 
-  updateCurrentSong = (searchValue) => {
+  updateCurrentDisplay = (searchValue) => {
     this.setState({
       currentSearch: searchValue
     });
@@ -60,17 +71,19 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Search updateCurrentSong={this.updateCurrentSong}/>
+        <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
-                        currentSetlist={this.state.currentSetlist}
+                        setlistData={this.state.currentSetlist}
+                        currentSearch={this.state.currentSearch}
                         updateCurrentSong={this.updateCurrentSong}
-                        updateCurrentSongIndex={this.updateCurrentSongIndex}/>
+                        updateCurrentSongIndex={this.updateCurrentSongIndex}
+                        updateCurrentSetlist={this.updateCurrentSetlist}/>
         <AudioPlayer currentSong={this.state.currentSong}
                       currentSetlist={this.state.currentSetlist}
                       currentShow={this.state.currentShow}
                       goToNextSong={this.goToNextSong}/>
       </div>
-    );
+    )
   }
 }
 
