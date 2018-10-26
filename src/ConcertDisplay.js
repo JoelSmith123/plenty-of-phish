@@ -20,7 +20,7 @@ export default class ConcertDisplay extends Component {
   }
 
   render() {
-    const {concertData, setlistData, currentSearch} = this.props;
+    const {currentSearch} = this.props;
     if (currentSearch === null && this.state.extendedView === false) {
       return (
         <main className="concert-display">
