@@ -13,7 +13,7 @@ class App extends Component {
       currentSong: 0,
       currentSetlist: [{title: 'Farmhouse', mp3: 'https://phish.in/audio/000/032/080/32080.mp3', duration: 459442},
       {title: 'Twist', mp3: 'https://phish.in/audio/000/031/819/31819.mp3', duration: 570984}],
-      currentShow: {venue: {name: "Madison Square Garden", location: "New York, NY"}},
+      currentShow: {date: "2017-01-13", venue: {name: "Madison Square Garden", location: "New York, NY"}},
       currentSearch: null,
       concertData: [],
       setlistData: {1903: ['nothing': 'void', 'nothing': 'void', 'nothing': 'void']}
@@ -64,6 +64,7 @@ class App extends Component {
         <Header />
         <Search updateCurrentSong={this.updateCurrentSong}/>
         <ConcertDisplay concertData={this.state.concertData}
+                        currentShow={this.state.currentShow}
                         setlistData={this.state.setlistData}
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}/>
