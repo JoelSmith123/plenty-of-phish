@@ -15,7 +15,7 @@ class App extends Component {
       currentSearch: null,
       concertData: [],
     }
-  }
+  } 
 
   componentDidMount() {
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
@@ -72,7 +72,8 @@ class App extends Component {
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
-                        setlistData={this.state.currentSetlist}
+                        currentSetlist={this.state.currentSetlist}
+                        setlistData={this.state.setlistData}
                         currentSearch={this.state.currentSearch}
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}
