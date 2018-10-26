@@ -10,9 +10,8 @@ class App extends Component {
     super();
     this.state = {
       currentSong: 0,
-      currentSetlist: [{title: 'Farmhouse', mp3: 'https://phish.in/audio/000/032/080/32080.mp3', duration: 459442},
-      {title: 'Twist', mp3: 'https://phish.in/audio/000/031/819/31819.mp3', duration: 570984}],
-      currentShow: {venue: {name: "Madison Square Garden", location: "New York, NY"}},
+      currentSetlist: [{title: '--', mp3: '', duration: 0}],
+      currentShow: {venue: {name: "--", location: "--"}},
       currentSearch: null,
       concertData: [],
     }
