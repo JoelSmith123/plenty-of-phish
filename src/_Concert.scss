@@ -1,0 +1,75 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.concert { 
+  overflow: hidden;
+  height: 200px;
+  width: 250px;
+  color: black;
+  border-radius: 3%;
+/*  background-color: #fff;
+  border: 1px solid black;
+*/  box-shadow: 0 2px 2px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.concert-image {
+  width: 160%;
+  left: -85px;
+  top: -5px;
+  /*height: 80%;*/
+  margin: 5px 5px 0px 5px;
+  overflow: hidden;
+  position: absolute;
+}
+.concert-date,
+.concert-location {
+  font-size: .8em;
+}
+.concert-text-display {
+  height: 80px;
+  background: #3a3a3a;
+  opacity: .9;
+  z-index: 2;
+  margin-top: 115px;
+  width: 100%;
+  color: #fafafa;
+  padding: 5px auto auto 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.concert:hover .fa-play-circle {
+  opacity: 1;
+  transition: .3s;
+  font-size: 2.6rem;
+}
+
+p {
+  margin: 2px 0px 0px 5px;
+  text-align: left;
+}
+
+.fa-play-circle {
+  opacity: 0;
+  transition: .3s;
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2.4rem;
+  color: #fafafa;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+
+
