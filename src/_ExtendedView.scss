@@ -51,18 +51,19 @@ tr,
 }
 
 .song-table-position {
-  padding-left: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 30px;
 }
 
 .fa-play-circle {
   display: none;
-  padding-right: 20px;
+  padding-right: 16px;
   vertical-align: middle;
 }
 
 .song-table-title {
-  padding-left: 44px;
-  width: 350px;
+  padding-left: 40px;
 
   &:hover {
     color: #6666ff;
@@ -78,7 +79,7 @@ tr,
 
 .song-table-duration {
   text-align: right;
-  padding-right: 5px;
-  width: 600px;
+  padding-right: 12px;
+  width: 50%;
 }
 
