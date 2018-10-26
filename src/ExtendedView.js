@@ -21,10 +21,13 @@ export default class ExtendedView extends Component {
   render() {
     return (
       <section className='song-table-container'>
-        <section className='venue-info'>
-          <h3 className='venue-date'>{this.props.currentShow.date}</h3>
-          <h2 className='venue-name'>{this.props.currentShow.venue.name}</h2>
-          <h3 className='venue-location'>{this.props.currentShow.venue.location}</h3>
+        <section className='venue-info-container'>
+          <i className="fas fa-chevron-left"></i>
+          <section className='venue-info'>
+            <h3 className='venue-date'>{this.props.currentShow.date}</h3>
+            <h2 className='venue-name'>{this.props.currentShow.venue.name}</h2>
+            <h3 className='venue-location'>{this.props.currentShow.venue.location}</h3>
+          </section>
         </section>
         <table className='song-table'>
           <tbody>
