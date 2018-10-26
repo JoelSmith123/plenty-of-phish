@@ -194,5 +194,61 @@ video { display: none }
 
 }
 
+@media screen and (max-width: 1100px) {
+  .audio-player {
+    height: 120px;
+  }
+
+  .audio-player-song {
+    font-size: calc(.8rem + 1vw);
+  }
+
+  .current-song-display {
+    font-size: calc(.25rem + 1vw);
+    top: -10%;
+    left: -8px;
+  }
+
+  .volume-control {
+    display: none;
+  }
+
+  .seek-bar {
+    width: 80%;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .audio-controls {
+    width: 100%;
+  }
+
+  .seek-bar {
+    width: 75%;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .play-pause {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+  }
+
+  .fa-pause,
+  .fa-play {
+    font-size: 1rem;
+    margin-left: 3px;
+  }
+
+  .fa-step-forward,
+  .fa-step-backward {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+}
+
 
 
