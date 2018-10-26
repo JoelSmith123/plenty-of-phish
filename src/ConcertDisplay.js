@@ -24,9 +24,10 @@ export default class ConcertDisplay extends Component {
     if (currentSearch === null && this.state.extendedView === false) {
       return (
         <main className="concert-display">
-        {this.props.concertData.map(concert => {
+        {this.props.concertData.map((concert, i) => {
           return <Concert concert={concert}
-                          goToExtendedView={this.goToExtendedView}/>
+                          goToExtendedView={this.goToExtendedView}
+                          key={i}/>
           })}
         </main>
       )
