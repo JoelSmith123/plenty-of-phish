@@ -76,24 +76,28 @@ video { display: none }
   outline: none;
   cursor: pointer;
   transition: .4s;
+  background: #FFF;
 }
 
 .play-pause:hover {
   transform: scale(1.05);
   border: 3.5px solid #89dfff;
   transition: .4s;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8)
 }
 
 .fa-step-backward:hover,
 .fa-step-forward:hover {
   color: #89dfff;
   transition: .4s;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 .play-pause:hover .fa-play,
 .play-pause:hover .fa-pause {
   @extend .fa-step-backward:hover;
   transform: scale(1.05);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
 }
 
 .play-pause:hover .fa-play {
@@ -138,6 +142,7 @@ video { display: none }
   margin: 0;
   width: 500px;
   outline: none;
+  border-radius: 5px;
 
   &::-webkit-slider-runnable-track {
     @include slider-track(8px);
@@ -164,6 +169,7 @@ video { display: none }
   right: 40px;
   bottom: 55px;
   outline: none;
+  border-radius: 5px;
 
   &::before {
     content: '';

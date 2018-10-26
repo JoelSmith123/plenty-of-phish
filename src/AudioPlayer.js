@@ -53,10 +53,8 @@ export default class AudioPlayer extends Component {
     let value = (100 / audio.duration) * audio.currentTime;
     if (value === 100 && this.props.currentSong < this.props.currentSetlist.length - 1) {
       this.props.goToNextSong(1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
-    } else if (value === 100 && this.props.currentSong === this.props.currentSetlist.length - 1) {
+      this.checkForNewSong();
+    } else if (value === 100 && this.props.currentSong ===    this.props.currentSetlist.length - 1) {
       playButton.innerHTML = '<i class="fas fa-play"></i>'
     } else {
       seekBar.value = value;
@@ -106,6 +104,20 @@ export default class AudioPlayer extends Component {
     return `${minutes}:${seconds}`
   }
 
+  checkForNewSong = () => {
+    const audio = document.querySelector('.audio-clip');
+    const playButton = document.querySelector('.play-pause');
+    if (this.props.currentSetlist[this.props.currentSong].mp3 !== '' && 
+      this.props.currentSetlist[this.props.currentSong].mp3 !== this.state.mp3){
+        this.setState({
+          mp3: this.props.currentSetlist[this.props.currentSong].mp3
+        });
+        audio.load();
+        audio.play();
+        playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    }
+  }
+
   changeSong(dir) {
     const audio = document.querySelector('.audio-clip');
     const playButton = document.querySelector('.play-pause');
@@ -114,14 +126,10 @@ export default class AudioPlayer extends Component {
     audio.pause();
     if (dir === 1 && this.props.currentSong < this.props.currentSetlist.length - 1) {
       this.props.goToNextSong(1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>';
+      this.checkForNewSong();
     } else if (dir === -1 && this.props.currentSong > 0) {
       this.props.goToNextSong(-1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>';
+      this.checkForNewSong();
     } else {
       seekBar.value = 0;
       audio.currentTime = 0;
