@@ -5,7 +5,8 @@ export default class AudioPlayer extends Component {
   constructor() {
     super();
     this.state = {
-      dragging: false
+      dragging: false,
+      mp3: ''
     }
   }
 
@@ -20,17 +21,18 @@ export default class AudioPlayer extends Component {
     const audio = document.querySelector('.audio-clip');
     const seekBar = document.querySelector('.seek-bar');
     const playButton = document.querySelector('.play-pause');
-    if (this.props.currentSetlist[this.props.currentSong].mp3 !== '') {
+    if (this.props.currentSetlist[this.props.currentSong].mp3 !== '' && 
+    this.props.currentSetlist[this.props.currentSong].mp3 !== this.state.mp3) {
+      this.setState({
+        mp3: this.props.currentSetlist[this.props.currentSong].mp3
+      });
       playButton.innerHTML = '<i class="fas fa-pause"></i>';
-      // audio.currentTime = 0;
-      // seekBar.value = 0;
+      audio.currentTime = 0;
+      seekBar.value = 0;
       audio.load();
       audio.play();
     }
   }
-
-  // Cant do the above on update, but somehow need to play song when src is changed / user clicks on song....
-
 
   togglePlay = () => {
     const audio = document.querySelector('.audio-clip');
