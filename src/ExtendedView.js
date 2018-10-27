@@ -29,7 +29,7 @@ export default class ExtendedView extends Component {
         <table className='song-table'>
           <tbody>
               {
-                this.props.setlist[1903].map((song, index) => {
+                this.props.setlist.map((song, index) => {
                   console.log(this.props.currentShow.venue.name)
                   return <tr className='song-table-row' key={index}>
                             <td className='song-table-position'>{song.position}</td>

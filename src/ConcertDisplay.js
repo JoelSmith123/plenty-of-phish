@@ -57,7 +57,9 @@ export default class ConcertDisplay extends Component {
     } else if (this.state.extendedView === true) {
         return (
           <main className="concert-display">
-            <ExtendedView setlist={this.props.currentSetlist} updateCurrentSongIndex={this.props.updateCurrentSongIndex} />
+            <ExtendedView setlist={this.props.currentSetlist}
+                          updateCurrentSongIndex={this.props.updateCurrentSongIndex}
+                          currentShow={this.props.currentShow} />
           </main>
           )
       } else {
