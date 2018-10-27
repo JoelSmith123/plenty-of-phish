@@ -5,7 +5,8 @@ export default class AudioPlayer extends Component {
   constructor() {
     super();
     this.state = {
-      dragging: false
+      dragging: false,
+      mp3: ''
     }
   }
 
@@ -16,10 +17,27 @@ export default class AudioPlayer extends Component {
     volumeControl.value = 100;
   }
 
+  componentDidUpdate() {
+    const audio = document.querySelector('.audio-clip');
+    const seekBar = document.querySelector('.seek-bar');
+    const playButton = document.querySelector('.play-pause');
+    if (this.props.currentSetlist[this.props.currentSong].mp3 !== '' && 
+    this.props.currentSetlist[this.props.currentSong].mp3 !== this.state.mp3) {
+      this.setState({
+        mp3: this.props.currentSetlist[this.props.currentSong].mp3
+      });
+      playButton.innerHTML = '<i class="fas fa-pause"></i>';
+      audio.currentTime = 0;
+      seekBar.value = 0;
+      audio.load();
+      audio.play();
+    }
+  }
+
   togglePlay = () => {
     const audio = document.querySelector('.audio-clip');
     const playButton = document.querySelector('.play-pause');
-    if (audio.paused === true) {
+    if (audio.paused === true && this.props.currentSetlist[this.props.currentSong].mp3 !== '') {
       audio.play();
       playButton.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
@@ -28,17 +46,15 @@ export default class AudioPlayer extends Component {
     }
   }
 
-  updateSeekBar = () => {
+  updateSeekBar = (e) => {
     const audio = document.querySelector('.audio-clip');
-    const seekBar = document.querySelector('.seek-bar');
+    const seekBar = e.target;
     const playButton = document.querySelector('.play-pause');
     let value = (100 / audio.duration) * audio.currentTime;
     if (value === 100 && this.props.currentSong < this.props.currentSetlist.length - 1) {
       this.props.goToNextSong(1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
-    } else if (value === 100 && this.props.currentSong === this.props.currentSetlist.length - 1) {
+      this.checkForNewSong();
+    } else if (value === 100 && this.props.currentSong ===    this.props.currentSetlist.length - 1) {
       playButton.innerHTML = '<i class="fas fa-play"></i>'
     } else {
       seekBar.value = value;
@@ -46,11 +62,13 @@ export default class AudioPlayer extends Component {
     document.querySelector('.current-time').innerHTML = this.convertTime(audio.currentTime * 1000);
   }
 
-  updateSongPosition = () => {
+  updateSongPosition = (e) => {
     const audio = document.querySelector('.audio-clip');
-    const seekBar = document.querySelector('.seek-bar');
-    let time = audio.duration * (seekBar.value / 100);
-    audio.currentTime = time;
+    const seekBar = e.target;
+    if (audio.readyState > 2) {
+      let time = audio.duration * (seekBar.value / 100);
+      audio.currentTime = time;
+    }
   }
 
   handleMouseDown = () => {
@@ -86,6 +104,20 @@ export default class AudioPlayer extends Component {
     return `${minutes}:${seconds}`
   }
 
+  checkForNewSong = () => {
+    const audio = document.querySelector('.audio-clip');
+    const playButton = document.querySelector('.play-pause');
+    if (this.props.currentSetlist[this.props.currentSong].mp3 !== '' && 
+      this.props.currentSetlist[this.props.currentSong].mp3 !== this.state.mp3){
+        this.setState({
+          mp3: this.props.currentSetlist[this.props.currentSong].mp3
+        });
+        audio.load();
+        audio.play();
+        playButton.innerHTML = '<i class="fas fa-pause"></i>';
+    }
+  }
+
   changeSong(dir) {
     const audio = document.querySelector('.audio-clip');
     const playButton = document.querySelector('.play-pause');
@@ -94,14 +126,10 @@ export default class AudioPlayer extends Component {
     audio.pause();
     if (dir === 1 && this.props.currentSong < this.props.currentSetlist.length - 1) {
       this.props.goToNextSong(1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
+      this.checkForNewSong();
     } else if (dir === -1 && this.props.currentSong > 0) {
       this.props.goToNextSong(-1);
-      audio.load();
-      audio.play();
-      playButton.innerHTML = '<i class="fas fa-pause"></i>'
+      this.checkForNewSong();
     } else {
       seekBar.value = 0;
       audio.currentTime = 0;
@@ -136,7 +164,7 @@ export default class AudioPlayer extends Component {
               <i className="fas fa-step-forward" onClick={() => this.changeSong(1)}></i>
             </div>
             <input onChange={this.updateSongPosition} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} type="range" className="seek-bar"  min="0" max="0"/>
-            <p className="song-length">{this.convertTime(this.props.currentSetlist[this.props.currentSong].duration + 2)}</p>
+            <p className="song-length">{this.convertTime(this.props.currentSetlist[this.props.currentSong].duration)}</p>
           </div>
           <input type="range" className="volume-control" onChange={this.changeVolume} min="0" max="100" />
         </section>

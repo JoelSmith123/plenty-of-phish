@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './Search.css';
 
 export default class Search extends Component {
-  constructor() {
-    super();
-  }
-
+  
   goPhishing = () => {
     this.props.updateCurrentDisplay(document.querySelector('.search-input').value.toLowerCase())
   }
