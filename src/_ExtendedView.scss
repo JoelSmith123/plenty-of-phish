@@ -1,0 +1,129 @@
+$blue: #3eb4e0;
+
+.song-table-container {
+  height: 100%;
+  padding-top: 5px;
+}
+
+tr {
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+}
+
+.venue-info-container {
+  background-color: rgba(128, 128, 128, 0.7);
+  background-blend-mode: lighten;
+  display: block;
+  height: 171px;
+  text-align: left;
+}
+
+.venue-info {
+  display: inline-block;
+}
+
+.fa-chevron-left {
+  border-radius: 20px;
+  font-size: 60px;
+  margin: 0 10px;
+  margin-top: -75px;
+  padding: 40px 40px;
+  transition: color 1s,
+              background-color 1s;
+  vertical-align: middle;
+
+  &:hover {
+    color: $blue;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+  }
+
+}
+
+.venue-date,
+.venue-name,
+.venue-location {
+  display: block;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.venue-date {
+  margin-bottom: 8px;
+  padding-top: 20px;
+}
+
+.venue-name {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.venue-location {
+  margin-top: 8px;
+  padding-bottom: 20px;
+}
+
+.song-table {
+  border-spacing: 0 2px;
+  height: calc(100% - 180px);
+  margin-bottom: 120px;
+  padding-bottom: 12px;
+  width: 100%;
+}
+
+.song-table-row {
+  text-align: left;
+  font-size: 1.5rem;
+  transition: color 300ms;
+
+  &:hover {
+    color: $blue;
+    cursor: pointer;
+  }
+
+  &:hover .fa-play-circle {
+    color: $blue;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:hover .song-table-position, 
+  &:hover .song-table-title,
+  &:hover .song-table-duration {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }         
+}
+
+.song-table-position, 
+.song-table-title,
+.song-table-duration {
+  transition: border-bottom 500ms;
+  border-bottom: 1px solid transparent;
+}
+
+.song-table-position {
+  padding-left: 12px;
+  padding-right: 6px;
+  width: 30px;
+}
+
+.fa-play-circle {
+  visibility: hidden;
+  opacity: 0;
+  padding-right: 16px;
+  transition: visibility 300ms ease-in,
+              opacity 300ms ease-in;
+  vertical-align: middle;
+}
+
+.song-table-title {
+  padding-left: 10px;
+}
+
+.song-table-duration {
+  text-align: right;
+  padding-right: 12px;
+  width: 50%;
+}
+
