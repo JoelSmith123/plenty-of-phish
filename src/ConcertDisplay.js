@@ -55,7 +55,7 @@ export default class ConcertDisplay extends Component {
       indices.push(num);
     }
     const {currentSearch} = this.props;
-    if (currentSearch === null && this.state.extendedView === false && this.props.concertData.length > 0) {
+    if (currentSearch === '' && this.state.extendedView === false && this.props.concertData.length > 0) {
       return (
         <main className="concert-display">
           {indices.map((concert, i) => {

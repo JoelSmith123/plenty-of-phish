@@ -12,7 +12,7 @@ class App extends Component {
       currentSong: 0,
       currentSetlist: [{title: '--', mp3: '', duration: 0}],
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
-      currentSearch: null,
+      currentSearch: '',
       concertData: []
     }
   } 
