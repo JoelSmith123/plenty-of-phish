@@ -20,6 +20,7 @@
   position: relative;
   margin: 0px auto;
   cursor: pointer;
+
 }
 
 .concert-image {
@@ -30,6 +31,14 @@
   margin: 5px 5px 0px 5px;
   overflow: hidden;
   position: absolute;
+  filter: grayscale(30%) brightness(90%);
+  transition: 0.4s;
+}
+
+.concert-image:hover {
+  filter: grayscale(0%) brightness(110%);
+  transition: 0.4s;
+
 }
 .concert-date,
 .concert-location {
