@@ -147,7 +147,7 @@ export default class AudioPlayer extends Component {
   render() {
     return (
       <footer className='audio-player'>
-        <section className="current-song-display">
+        <section className="current-song-display" onClick={this.props.updatePageView}>
           <h3 className="audio-player-song">{this.props.currentSetlist[this.props.currentSong].title}</h3>
           <p className="audio-player-venue">{this.props.currentShow.venue.name}</p>
           <p className="audio-player-location">{this.props.currentShow.venue.location}</p>

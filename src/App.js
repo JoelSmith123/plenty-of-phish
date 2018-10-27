@@ -55,7 +55,6 @@ class App extends Component {
     this.setState({
       currentSearch: searchValue
     });
-    // console.log(this.currentSearch)
     console.log(this.state.currentSearch)
   }
 
@@ -63,7 +62,7 @@ class App extends Component {
     this.setState({
       currentSong: songIndex
     });
-    console.log('Song Index:',  this.state.currentSong)
+    console.log('Song Index:', this.state.currentSong)
   }
 
   render() {
@@ -78,11 +77,11 @@ class App extends Component {
                         currentSearch={this.state.currentSearch}
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}
-                        updateCurrentSetlist={this.updateCurrentSetlist}/>
+                        updateCurrentSetlist={this.updateCurrentSetlist} />
         <AudioPlayer currentSong={this.state.currentSong}
                       currentSetlist={this.state.currentSetlist}
                       currentShow={this.state.currentShow}
-                      goToNextSong={this.goToNextSong}/>
+                      goToNextSong={this.goToNextSong} />
       </div>
     )
   }
