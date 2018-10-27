@@ -13,7 +13,7 @@ class App extends Component {
       currentSetlist: [{title: '--', mp3: '', duration: 0}],
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: null,
-      concertData: [],
+      concertData: []
     }
   } 
 
@@ -26,6 +26,11 @@ class App extends Component {
       .then(response => response.json())
       .then(setListData => this.setState({setlistData: setListData.setLists}))
       .catch(error => console.log(error));
+  }
+
+  updateRandomConcertData = (e) => {
+    e.preventDefault()
+    this.forceUpdate()
   }
 
 
@@ -69,7 +74,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
+        <Search updateCurrentDisplay={this.updateCurrentDisplay}
+                updateRandomConcertData={this.updateRandomConcertData}/>
         <ConcertDisplay concertData={this.state.concertData}
                         currentShow={this.state.currentShow}
                         currentSetlist={this.state.currentSetlist}
@@ -77,7 +83,8 @@ class App extends Component {
                         currentSearch={this.state.currentSearch}
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}
-                        updateCurrentSetlist={this.updateCurrentSetlist} />
+                        updateCurrentSetlist={this.updateCurrentSetlist}
+                        updateRandomConcertData={this.updateRandomConcertData}/>
         <AudioPlayer currentSong={this.state.currentSong}
                       currentSetlist={this.state.currentSetlist}
                       currentShow={this.state.currentShow}
