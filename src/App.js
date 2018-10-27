@@ -13,9 +13,7 @@ class App extends Component {
       currentSetlist: [{title: '--', mp3: '', duration: 0}],
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: null,
-      concertData: [],
-      randomConcertData: []
-
+      concertData: []
     }
   } 
 
@@ -87,7 +85,6 @@ class App extends Component {
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}
                         updateCurrentSetlist={this.updateCurrentSetlist}
-                        randomConcertData={this.state.randomConcertData}
                         updateRandomConcertData={this.updateRandomConcertData}/>
         <AudioPlayer currentSong={this.state.currentSong}
                       currentSetlist={this.state.currentSetlist}
