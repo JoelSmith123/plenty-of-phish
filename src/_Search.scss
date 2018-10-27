@@ -1,0 +1,53 @@
+$acentColor: rgba(58, 58, 58, .9);
+$shadow: 2px 2px 15px #28596d;
+$primaryColor: rgba(62, 179, 223, .91);
+
+@mixin form-styles($fontSize, $height, $width) {
+  border-radius: 5px;
+  border: none;
+  box-shadow: $shadow;
+  font-size: $fontSize;
+  height: $height;
+  outline: none;
+  width: $width;
+  background: $acentColor;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $primaryColor;
+  padding: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.search-input {
+  @include form-styles(1.5em, 40px, 400px)
+  margin-left: 25px;
+}
+
+.random-btn {
+  @include form-styles(1.2em, 30px, 145px)
+  padding: 10px 10px 30px;
+  margin-right: 5vw;
+}
+
+.view-btn {
+  @include form-styles(1.2em, 30px, 120px)
+  padding: 10px 10px 30px;
+  margin-left: 5vw;
+}
+
+.search-input::placeholder {
+  padding-left: 8px;
+  color: #ffffff;
+}
