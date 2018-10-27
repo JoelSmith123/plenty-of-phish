@@ -5,20 +5,17 @@ import Search from './Search';
 import ConcertDisplay from './ConcertDisplay';
 import AudioPlayer from './AudioPlayer';
 
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
       currentSong: 0,
-      currentSetlist: [{title: 'Farmhouse', mp3: 'https://phish.in/audio/000/032/080/32080.mp3', duration: 459442},
-      {title: 'Twist', mp3: 'https://phish.in/audio/000/031/819/31819.mp3', duration: 570984}],
-      currentShow: {venue: {name: "Madison Square Garden", location: "New York, NY"}},
+      currentSetlist: [{title: '--', mp3: '', duration: 0}],
+      currentShow: {venue: {name: "--", location: "--"}},
       currentSearch: null,
       concertData: [],
-      setlistData: {1903: ['nothing': 'void', 'nothing': 'void', 'nothing': 'void']}
     }
-  }
+  } 
 
   componentDidMount() {
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
@@ -30,6 +27,7 @@ class App extends Component {
       .then(setListData => this.setState({setlistData: setListData.setLists}))
       .catch(error => console.log(error));
   }
+
 
   updateCurrentSetlist = (id) => {
     let show = this.state.concertData.find((concert) => {
@@ -57,15 +55,15 @@ class App extends Component {
     this.setState({
       currentSearch: searchValue
     });
-    console.log(this.currentSearch)
-    // console.log(this.state.currentSearch)
+    // console.log(this.currentSearch)
+    console.log(this.state.currentSearch)
   }
 
   updateCurrentSongIndex = (songIndex) => {
     this.setState({
       currentSong: songIndex
     });
-    console.log(this.state.currentSong)
+    console.log('Song Index:',  this.state.currentSong)
   }
 
   render() {
@@ -74,7 +72,8 @@ class App extends Component {
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
-                        setlistData={this.state.currentSetlist}
+                        currentSetlist={this.state.currentSetlist}
+                        setlistData={this.state.setlistData}
                         currentSearch={this.state.currentSearch}
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}

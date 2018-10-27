@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './main.scss';
 
 export default class Concert extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
     return (
       <article className="concert" key={this.props.concert.id} onClick={() => this.props.goToExtendedView(this.props.concert.id)}>
