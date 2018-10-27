@@ -65,7 +65,7 @@ export default class ConcertDisplay extends Component {
         if (searchResults.length === 0) {
           return (
             <main className="concert-display">
-              <h1>Didn't catch anything on that one!</h1>
+              <h1>Didn\'t catch anything on that one!</h1>
             </main>
           )
         } else {
