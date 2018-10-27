@@ -43,12 +43,17 @@ export default class ConcertDisplay extends Component {
   }
 
   render() {
+    const indices = [];
+    for (var i = 0; i < 8; i ++) {
+      let num = Math.floor(Math.random() * this.props.concertData.length)
+      indices.push(num);
+    }
     const {currentSearch} = this.props;
-    if (currentSearch === null && this.state.extendedView === false) {
+    if (currentSearch === null && this.state.extendedView === false && this.props.concertData.length > 0) {
       return (
         <main className="concert-display">
-        {this.props.concertData.map((concert, i) => {
-          return <Concert concert={concert}
+          {indices.map((concert, i) => {
+            return <Concert concert={this.props.concertData[concert]}
                           goToExtendedView={this.goToExtendedView}
                           key={i}/>
           })}
