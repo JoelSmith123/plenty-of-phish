@@ -10,6 +10,8 @@ export default class ConcertDisplay extends Component {
       extendedView: false
     }
   }
+
+
   
   returnFromExtendedView = () => {
     this.setState({
@@ -55,7 +57,17 @@ export default class ConcertDisplay extends Component {
       indices.push(num);
     }
     const {currentSearch} = this.props;
-    if (currentSearch === '' && this.state.extendedView === false && this.props.concertData.length > 0) {
+    if (this.props.showAllConcerts === true) {
+      return (
+        <main className="concert-display">
+          {this.props.concertData.map((concert, i) => {
+            return <Concert concert={concert}
+                          goToExtendedView={this.goToExtendedView}
+                          key={i}/>
+          })}
+        </main>
+      )
+    } else if (currentSearch === '' && this.state.extendedView === false && this.props.concertData.length > 0) {
       return (
         <main className="concert-display">
           {indices.map((concert, i) => {
