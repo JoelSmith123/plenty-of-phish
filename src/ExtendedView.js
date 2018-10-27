@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './main.scss';
 
 export default class ExtendedView extends Component {
-  constructor() {
-    super()
-  }
 
   convertTime = (ms) => {
     var milliseconds = parseInt(ms);
