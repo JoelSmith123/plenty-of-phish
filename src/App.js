@@ -13,7 +13,8 @@ class App extends Component {
       currentSetlist: [{title: '--', mp3: '', duration: 0}],
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: '',
-      concertData: []
+      concertData: [],
+      showAllConcerts: false
     }
   } 
 
@@ -28,11 +29,19 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
-  updateRandomConcertData = (e) => {
+  toggleShowAllConcerts = (boolean, e) => {
     e.preventDefault()
-    this.forceUpdate()
+    this.setState({
+      showAllConcerts: boolean
+    })
+    console.log(this.state.showAllConcerts)
   }
 
+  updateRandomConcertData = (e) => {
+    e.preventDefault()
+    this.toggleShowAllConcerts(false, e)
+    this.forceUpdate()
+  }
 
   updateCurrentSetlist = (id) => {
     let show = this.state.concertData.find((concert) => {
@@ -75,8 +84,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}
-                updateRandomConcertData={this.updateRandomConcertData}/>
+                updateRandomConcertData={this.updateRandomConcertData}
+                toggleShowAllConcerts={this.toggleShowAllConcerts}/>
         <ConcertDisplay concertData={this.state.concertData}
+                        showAllConcerts={this.state.showAllConcerts}
                         currentShow={this.state.currentShow}
                         currentSetlist={this.state.currentSetlist}
                         setlistData={this.state.setlistData}
