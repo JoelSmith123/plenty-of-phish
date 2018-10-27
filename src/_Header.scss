@@ -1,0 +1,46 @@
+$font: Bubblegum Sans, cursive;
+$primaryColor: rgba(62, 179, 223, .91);
+
+@mixin title-font($fontSize, $margin, $left){
+  font-family: $font;
+  font-size: $fontSize;
+  left: $left;
+  margin: $margin;
+  position: absolute;
+  right: 0;
+}
+
+header {
+  color: $primaryColor;
+  position: relative;
+  text-shadow: 1.3px 2px 2px #282828;
+  z-index: 1;
+}
+
+header::before {
+  background: url(https://expo.advance.net/img/eaa9c7e6e3/width960/977_ap110702155984.jpeg);
+  background-position: 0% 45%;
+  bottom: 0;
+  content: '';
+  filter: grayscale(100%);
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.header-img {
+  filter: drop-shadow(0 0 40px #ffffff);
+  height: 160px;
+  margin: 60px auto 20px;
+  position: relative;
+}
+
+.header-plenty {
+  @include title-font(3rem, 6px auto, 0)
+}
+
+.header-of {
+  @include title-font(2rem, 50px auto, 150px)
+}
