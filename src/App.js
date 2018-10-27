@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       currentSong: 0,
       currentSetlist: [{title: '--', mp3: '', duration: 0}],
-      currentShow: {venue: {name: "--", location: "--"}},
+      currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: null,
       concertData: [],
     }
@@ -72,6 +72,7 @@ class App extends Component {
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}/>
         <ConcertDisplay concertData={this.state.concertData}
+                        currentShow={this.state.currentShow}
                         currentSetlist={this.state.currentSetlist}
                         setlistData={this.state.setlistData}
                         currentSearch={this.state.currentSearch}
