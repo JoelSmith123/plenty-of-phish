@@ -8,9 +8,7 @@
   width: 250px;
   color: black;
   border-radius: 3%;
-/*  background-color: #fff;
-  border: 1px solid black;
-*/ box-shadow: 0 2px 2px rgb(0, 0, 0);
+  box-shadow: 0 2px 2px rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,13 +29,27 @@
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   }
 
+  .fa-play-circle:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover .fa-play-circle {
+    opacity: 1;
+    transition: .3s;
+    font-size: 2.6rem;
+  }
+
+  &:hover .concert-image {
+    filter: grayscale(0%) brightness(110%);
+    transition: 0.4s;
+  }
 }
+
 
 .concert-image {
   width: 160%;
   left: -85px;
   top: -5px;
-  /*height: 80%;*/
   margin: 5px 5px 0px 5px;
   overflow: hidden;
   position: absolute;
@@ -45,15 +57,11 @@
   transition: 0.4s;
 }
 
-.concert-image:hover {
-  filter: grayscale(0%) brightness(110%);
-  transition: 0.4s;
-
-}
 .concert-date,
 .concert-location {
   font-size: .8em;
 }
+
 .concert-text-display {
   height: 80px;
   background: #3a3a3a;
@@ -66,17 +74,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
   p {
-  margin: 2px 0px 0px 5px;
-  text-align: left;
+    margin: 2px 0px 0px 5px;
+    text-align: left;
   } 
 }
 
-.concert:hover .fa-play-circle {
-  opacity: 1;
-  transition: .3s;
-  font-size: 2.6rem;
-}
+
 
 
 
