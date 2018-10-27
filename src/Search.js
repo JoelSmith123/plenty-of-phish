@@ -17,7 +17,7 @@ export default class Search extends Component {
           placeholder="Search for a Song, Venue, or Show Date"
           onChange={this.goPhishing} 
         />
-        <button className="random-btn">Random Shows</button>
+        <button className="random-btn" onClick={ e => this.props.updateRandomConcertData(e)}>Random Shows</button>
       </form>
     )
   }
