@@ -11,9 +11,15 @@ export default class ConcertDisplay extends Component {
     }
   }
   
+  returnFromExtendedView = () => {
+    this.setState({
+      extendedView: false
+    })
+  }
+
   goToExtendedView = (id) => {
     this.setState({
-      extendedView: true,
+      extendedView: true
     });
     this.props.updateCurrentSetlist(id);
   }
@@ -64,7 +70,8 @@ export default class ConcertDisplay extends Component {
           <main className="concert-display">
             <ExtendedView setlist={this.props.currentSetlist}
                           updateCurrentSongIndex={this.props.updateCurrentSongIndex}
-                          currentShow={this.props.currentShow} />
+                          currentShow={this.props.currentShow}
+                          returnFromExtendedView={this.returnFromExtendedView} />
           </main>
           )
       } else {

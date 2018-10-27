@@ -19,7 +19,7 @@ export default class ExtendedView extends Component {
     return (
       <section className='song-table-container'>
         <section className='venue-info-container'>
-          <i className="fas fa-chevron-left"></i>
+          <i className="fas fa-chevron-left" onClick={this.props.returnFromExtendedView}></i>
           <section className='venue-info'>
             <h3 className='venue-date'>{this.props.currentShow.date}</h3>
             <h2 className='venue-name'>{this.props.currentShow.venue.name}</h2>
