@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ConcertDisplay.css';
+import './main.scss';
 import ExtendedView from './ExtendedView';
 import Concert from './Concert.js';
 
