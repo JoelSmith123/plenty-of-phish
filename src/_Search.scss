@@ -12,6 +12,7 @@ $primaryColor: rgba(62, 179, 223, .91);
   width: $width;
   background: $acentColor;
   color: #ffffff;
+  transition: .3s;
 }
 
 * {
@@ -28,26 +29,43 @@ form {
   position: sticky;
   top: 0px;
   z-index: 2;
+  padding-left: 25px;
 }
 
 .search-input {
-  @include form-styles(1.5em, 40px, 400px)
-  margin-left: 25px;
+  @include form-styles(calc(1vw + .6em), 40px, 40%);
+  padding-left: 12px;
+  text-overflow: ellipsis;
 }
 
 .random-btn {
-  @include form-styles(1.2em, 30px, 145px)
-  padding: 10px 10px 30px;
+  @include form-styles(calc(1vw + .4em), 30px, 15%);
+  // padding: 10px 10px 30px;
+  height: 40px;
   margin-right: 5vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .view-btn {
-  @include form-styles(1.2em, 30px, 120px)
-  padding: 10px 10px 30px;
+  @include form-styles(calc(1vw + .4em), 30px, 15%);
+  // padding: 10px 10px 30px;
+  height: 40px;
   margin-left: 5vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.random-btn:hover,
+.view-btn:hover {
+  transform: scale(1.05);
+  transition: .3s;
 }
 
 .search-input::placeholder {
-  padding-left: 8px;
   color: #ffffff;
 }

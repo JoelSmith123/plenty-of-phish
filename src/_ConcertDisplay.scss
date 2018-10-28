@@ -1,23 +1,40 @@
 .concert-display {
   width: 100%;
-  padding: 35px 15px 135px 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.error-display {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  height: 500px;
+  text-align: center;
+}
+
+.concert-grid {
+  width: 100%;
+  padding: 35px 15px 165px 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22%, 1fr));
-  grid-gap: 25px;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, 270px);
+  grid-gap: 55px 0;
+  justify-content: space-around;
   grid-auto-flow: dense;
   position: relative;
   z-index: 1;
 }
 
-.concert-display::before {
-  background: url(http://thephunion.com/wp-content/uploads/2013/04/Umphreys.jpg);
-  opacity: 0.55;
+.concert-display::before,
+.error-display::before {
+  background: 
+  url(http://thephunion.com/wp-content/uploads/2013/04/Umphreys.jpg);
+  opacity: 0.40;
+  filter: blur(3px);
   content: '';
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
+  top: -20px;
   background-size: 100%;
   background-position: 50% 40%;
   position: absolute;

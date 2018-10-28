@@ -60,21 +60,25 @@ export default class ConcertDisplay extends Component {
     if (this.props.showAllConcerts === true && currentSearch === '') {
       return (
         <main className="concert-display">
-          {this.props.concertData.map((concert, i) => {
-            return <Concert concert={concert}
-                          goToExtendedView={this.goToExtendedView}
-                          key={i}/>
-          })}
+          <div className="concert-grid">
+            {this.props.concertData.map((concert, i) => {
+              return <Concert concert={concert}
+                            goToExtendedView={this.goToExtendedView}
+                            key={i}/>
+            })}
+          </div>  
         </main>
       )
     } else if (currentSearch === '' && this.state.extendedView === false && this.props.concertData.length > 0) {
       return (
         <main className="concert-display">
-          {indices.map((concert, i) => {
-            return <Concert concert={this.props.concertData[concert]}
-                          goToExtendedView={this.goToExtendedView}
-                          key={i}/>
-          })}
+          <div className="concert-grid">
+            {indices.map((concert, i) => {
+              return <Concert concert={this.props.concertData[concert]}
+                            goToExtendedView={this.goToExtendedView}
+                            key={i}/>
+            })}
+          </div>
         </main>
       )
     } else if (this.state.extendedView === true) {
@@ -90,17 +94,19 @@ export default class ConcertDisplay extends Component {
         let searchResults = this.displayVenueSearch();
         if (searchResults.length === 0) {
           return (
-            <main className="concert-display">
+            <main className="error-display">
               <h1>Didn&apos;t catch anything on that one!</h1>
             </main>
           )
         } else {
             return (
               <main className="concert-display">
-              {searchResults.map(concert => {
-                return <Concert concert={concert}
-                                goToExtendedView={this.goToExtendedView}/>
-                })}
+                <div className="concert-grid">
+                  {searchResults.map(concert => {
+                  return <Concert concert={concert}
+                                  goToExtendedView={this.goToExtendedView}/>
+                  })}
+                </div>
               </main>
             )
         }
