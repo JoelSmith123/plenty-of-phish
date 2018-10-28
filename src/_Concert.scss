@@ -43,6 +43,10 @@
     filter: grayscale(0%) brightness(110%);
     transition: 0.4s;
   }
+
+  &:hover {
+    box-shadow: 2px 4px 20px darken(#3a3a3a, 20%), -2px 4px 20px darken(#3a3a3a, 20%);
+  }
 }
 
 
