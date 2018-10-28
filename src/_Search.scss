@@ -14,6 +14,12 @@ $primaryColor: rgba(62, 179, 223, .91);
   color: #ffffff;
 }
 
+@mixin hover($cursor) {
+  cursor: $cursor;
+  bightness: 200%;
+  background: #47227b;
+}
+
 * {
   box-sizing: border-box;
   font-family: $font;
@@ -34,18 +40,30 @@ form {
 .search-input {
   @include form-styles(1.5em, 40px, 400px)
   margin-left: 25px;
+
+  &:hover{
+   @include hover(text)
+  }
 }
 
 .random-btn {
   @include form-styles(1.2em, 30px, 145px)
   padding: 10px 10px 30px;
   margin-right: 5vw;
+
+   &:hover{
+    @include hover(pointer)
+  }
 }
 
 .view-btn {
   @include form-styles(1.2em, 30px, 120px)
   padding: 10px 10px 30px;
   margin-left: 5vw;
+
+  &:hover{
+    @include hover(pointer)
+  }
 }
 
 .search-input::placeholder {
