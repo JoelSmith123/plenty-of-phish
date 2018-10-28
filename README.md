@@ -4,9 +4,19 @@
 
 A React-based setlist tracking and audio playing application with taper recordings of the band Phish
 
-### Install Instructions 
+### Install/Setup Instructions 
 ### About the Project
-#### Project Goals
+
+For this project we worked in a group to make an application in React. This project was an opportunity to reinforce and solidify JS fundamentals, OOP, working with large datasets, and developing workflows. It was also an opportunity to solve problems after all software, at its core, is about solving problems. Our application solves the problem of taping culture slipping away. The taping culture of the jam scene was something that at one point was incredibly prevalent and played a huge part in why that community is the way it is today. It certainly hasn't gone away, but monetized soundboard recording websites, Spotify, and the like have all changed the way that community interacts with music and technology. And it's not like websites or apps haven't been made before to make taped shows freely accessible on the internet, but many of them are kind of a pain (either not very well put together or poor UI/UX). Our goal was to create an application that acts as a database of show information and audio in the spirit of how taping and music exchange once was, but that still is easy and pleasant to interact with. Eventually this application could be expanded to include many bands but start out with are using Phish shows from 2017. Which still gives us a large dataset to work with.
+
+#### Technologies Used for this project 
+
+  * The fetch API for sending/receiving our data
+  * ReactJS for organizing our application into components
+  * JSX for writing our component templates
+  * Sass for keeping our CSS DRY
+
+#### Project Goals 
 #### User Stories
 ##### Page Load
 
