@@ -30,7 +30,9 @@ class App extends Component {
   }
 
   toggleShowAllConcerts = (boolean, e) => {
-    e.preventDefault()
+    if (e !== undefined) {
+      e.preventDefault();
+    }
     this.setState({
       showAllConcerts: boolean
     })
@@ -95,7 +97,8 @@ class App extends Component {
                         updateCurrentSong={this.updateCurrentSong}
                         updateCurrentSongIndex={this.updateCurrentSongIndex}
                         updateCurrentSetlist={this.updateCurrentSetlist}
-                        updateRandomConcertData={this.updateRandomConcertData}/>
+                        updateRandomConcertData={this.updateRandomConcertData}
+                        toggleShowAllConcerts={this.toggleShowAllConcerts}/>
         <AudioPlayer currentSong={this.state.currentSong}
                       currentSetlist={this.state.currentSetlist}
                       currentShow={this.state.currentShow}

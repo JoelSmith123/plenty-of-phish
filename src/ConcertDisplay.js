@@ -23,6 +23,7 @@ export default class ConcertDisplay extends Component {
     this.setState({
       extendedView: true
     });
+    this.props.toggleShowAllConcerts();
     this.props.updateCurrentSetlist(id);
   }
 
