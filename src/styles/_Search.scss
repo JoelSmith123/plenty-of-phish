@@ -40,7 +40,6 @@ form {
 
 .random-btn {
   @include form-styles(calc(1vw + .4em), 30px, 15%);
-  // padding: 10px 10px 30px;
   height: 40px;
   margin-right: 5vw;
   cursor: pointer;
@@ -51,7 +50,6 @@ form {
 
 .view-btn {
   @include form-styles(calc(1vw + .4em), 30px, 15%);
-  // padding: 10px 10px 30px;
   height: 40px;
   margin-left: 5vw;
   cursor: pointer;

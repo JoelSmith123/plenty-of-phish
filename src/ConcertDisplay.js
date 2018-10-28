@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './main.scss';
+import './styles/main.scss';
 import ExtendedView from './ExtendedView';
 import Concert from './Concert.js';
 
@@ -92,7 +92,7 @@ export default class ConcertDisplay extends Component {
           )
       } else {
         let searchResults = this.displayVenueSearch();
-        if (searchResults.length === 0) {
+        if (searchResults.length === 0 && this.props.concertData.length > 0) {
           return (
             <main className="error-display">
               <h1>Didn&apos;t catch anything on that one!</h1>
