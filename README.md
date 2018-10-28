@@ -4,6 +4,8 @@
 
 A React-based setlist tracking and audio playing application with taper recordings of the band Phish
 
+##
+
 ### Install/Setup Instructions 
 ### About the Project
 
@@ -17,7 +19,14 @@ For this project we worked in a group to make an application in React. This proj
   * Sass for keeping our CSS DRY
 
 #### Project Goals 
-#### User Stories
+
+ * Synthesize knowledge of OOP, classes, and JS fundamentals to create an application using React
+ * Construct complex dataset to be used to implement array mutator and iterator methods to work with data
+ * Collaborate and create (and iterate) on user stories
+ * Demonstrate good GitHub collaboration and workflow within a large group
+ 
+ 
+### User Stories
 ##### Page Load
 
 ```
