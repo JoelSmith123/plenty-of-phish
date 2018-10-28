@@ -67,3 +67,14 @@ form {
 .search-input::placeholder {
   color: #ffffff;
 }
+
+@media screen and (max-width: 650px) {
+  form {
+    justify-content: space-between;
+  }
+
+  .random-btn,
+  .view-btn {
+    width: 20%;
+  }
+}
