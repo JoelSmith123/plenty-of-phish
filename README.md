@@ -7,6 +7,14 @@ A React-based setlist tracking and audio playing application with taper recordin
 ##
 
 ### Install/Setup Instructions 
+```
+git clone https://github.com/jarushford/plenty-of-phish.git
+
+npm install 
+
+npm start
+
+```
 ### About the Project
 
 For this project we worked in a group to make an application in React. This project was an opportunity to reinforce and solidify JS fundamentals, OOP, working with large datasets, and developing workflows. It was also an opportunity to solve problems after all software, at its core, is about solving problems. Our application solves the problem of taping culture slipping away. The taping culture of the jam scene was something that at one point was incredibly prevalent and played a huge part in why that community is the way it is today. It certainly hasn't gone away, but monetized soundboard recording websites, Spotify, and the like have all changed the way that community interacts with music and technology. And it's not like websites or apps haven't been made before to make taped shows freely accessible on the internet, but many of them are kind of a pain (either not very well put together or poor UI/UX). Our goal was to create an application that acts as a database of show information and audio in the spirit of how taping and music exchange once was, but that still is easy and pleasant to interact with. Eventually this application could be expanded to include many bands but start out with are using Phish shows from 2017. Which still gives us a large dataset to work with.
@@ -100,6 +108,12 @@ As a user,
 ```
 ### Design and Layout
 #### Our Wire Frames
+
+![47395457-0f287f80-d6e4-11e8-8510-24e6c2731f90](https://user-images.githubusercontent.com/40005248/47622529-8f2b5c80-dacb-11e8-80ae-392cc019d335.png)
+
+![47395468-194a7e00-d6e4-11e8-9919-f55865a6d5b5](https://user-images.githubusercontent.com/40005248/47622534-9fdbd280-dacb-11e8-8d6d-f8fdd61f1922.png)
+
+
 #### Our Finished Design
 ### Contributors:
   * Jamie Rushford @jarushford 
