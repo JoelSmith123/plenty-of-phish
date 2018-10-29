@@ -34,8 +34,16 @@ form {
 
 .search-input {
   @include form-styles(calc(1vw + .6em), 40px, 40%);
+  background: lighten(rgba(58, 58, 58, .9), 35%);
+  border: 2px solid rgba(58, 58, 58, .9);
+  box-shadow: 2px 2px 8px #28596d;
   padding-left: 12px;
   text-overflow: ellipsis;
+
+  &::placeholder {
+    color: #ffffff;
+    opacity: .75;
+  }
 }
 
 .random-btn {
@@ -62,10 +70,6 @@ form {
 .view-btn:hover {
   transform: scale(1.05);
   transition: .3s;
-}
-
-.search-input::placeholder {
-  color: #ffffff;
 }
 
 @media screen and (max-width: 650px) {
