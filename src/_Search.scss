@@ -16,7 +16,7 @@ $primaryColor: rgba(62, 179, 223, .91);
 
 @mixin hover($cursor) {
   cursor: $cursor;
-  bightness: 200%;
+  brightness: 200%;
   background: #47227b;
 }
 
