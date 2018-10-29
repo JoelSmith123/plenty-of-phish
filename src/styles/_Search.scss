@@ -1,0 +1,84 @@
+$acentColor: rgba(58, 58, 58, .9);
+$shadow: 2px 2px 15px #28596d;
+$primaryColor: rgba(62, 179, 223, .91);
+
+@mixin form-styles($fontSize, $height, $width) {
+  border-radius: 5px;
+  border: none;
+  box-shadow: $shadow;
+  font-size: $fontSize;
+  height: $height;
+  outline: none;
+  width: $width;
+  background: $acentColor;
+  color: #ffffff;
+  transition: .3s;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $primaryColor;
+  padding: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  padding-left: 25px;
+}
+
+.search-input {
+  @include form-styles(calc(1vw + .6em), 40px, 40%);
+  background: lighten(rgba(58, 58, 58, .9), 35%);
+  border: 2px solid rgba(58, 58, 58, .9);
+  box-shadow: 2px 2px 8px #28596d;
+  padding-left: 12px;
+  text-overflow: ellipsis;
+
+  &::placeholder {
+    color: #ffffff;
+    opacity: .75;
+  }
+}
+
+.random-btn {
+  @include form-styles(calc(1vw + .4em), 30px, 15%);
+  height: 40px;
+  margin-right: 5vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-btn {
+  @include form-styles(calc(1vw + .4em), 30px, 15%);
+  height: 40px;
+  margin-left: 5vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.random-btn:hover,
+.view-btn:hover {
+  transform: scale(1.05);
+  transition: .3s;
+}
+
+@media screen and (max-width: 650px) {
+  form {
+    justify-content: space-between;
+  }
+
+  .random-btn,
+  .view-btn {
+    width: 20%;
+  }
+}

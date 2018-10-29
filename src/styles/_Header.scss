@@ -8,6 +8,10 @@ $primaryColor: rgba(62, 179, 223, .91);
   margin: $margin;
   position: absolute;
   right: 0;
+  display: block;
+  text-align: center;
+  top: -70px;
+  cursor: default;
 }
 
 header {
@@ -15,6 +19,7 @@ header {
   position: relative;
   text-shadow: 1.3px 2px 2px #282828;
   z-index: 1;
+  height: 200px;
 }
 
 header::before {
@@ -27,12 +32,14 @@ header::before {
   opacity: .4;
   position: absolute;
   right: 0;
-  top: 0;
+  top: -80px;
 }
 
 .header-img {
   filter: drop-shadow(0 0 40px #ffffff);
   height: 160px;
+  margin: 80px auto;
+  display: block;
   margin: 60px auto 20px;
   position: relative;
   animation-name: stretch;

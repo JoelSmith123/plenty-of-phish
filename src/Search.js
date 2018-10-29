@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './main.scss';
+import './styles/main.scss';
 
 export default class Search extends Component {
   
@@ -21,6 +21,7 @@ export default class Search extends Component {
           type="text"
           placeholder="Search for a Song, Venue, or Show Date"
           onChange={this.goPhishing} 
+          autoFocus
         />
         <button className="random-btn" onClick={e => this.props.updateRandomConcertData(e)}>Random Shows</button>
       </form>

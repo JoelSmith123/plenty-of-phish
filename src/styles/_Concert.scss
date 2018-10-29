@@ -16,6 +16,7 @@
   position: relative;
   margin: 0px auto;
   cursor: pointer;
+  transition: .5s;
 
   .fa-play-circle {
     opacity: 0;
@@ -45,10 +46,10 @@
   }
 
   &:hover {
-    box-shadow: 2px 4px 20px darken(#3a3a3a, 20%), -2px 4px 20px darken(#3a3a3a, 20%);
+    box-shadow: 2px 4px 10px darken(#3a3a3a, 10%), -2px 4px 10px darken(#3a3a3a, 10%);
+    transition: .5s;
   }
 }
-
 
 .concert-image {
   width: 160%;
