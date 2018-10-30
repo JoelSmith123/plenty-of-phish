@@ -12,7 +12,7 @@ $primaryColor: rgba(62, 179, 223, .91);
   width: $width;
   background: $acentColor;
   color: #ffffff;
-  transition: .3s;
+  transition: .8s;
 }
 
 * {
@@ -35,7 +35,7 @@ form {
 .search-input {
   @include form-styles(calc(1vw + .6em), 40px, 40%);
   background: lighten(rgba(58, 58, 58, .9), 35%);
-  border: 2px solid rgba(58, 58, 58, .9);
+  border: 1px solid rgba(58, 58, 58, .9);
   box-shadow: 2px 2px 8px #28596d;
   padding-left: 12px;
   text-overflow: ellipsis;
@@ -68,8 +68,9 @@ form {
 
 .random-btn:hover,
 .view-btn:hover {
+  background: #47227b;
   transform: scale(1.05);
-  transition: .3s;
+  transition: .8s;
 }
 
 @media screen and (max-width: 650px) {

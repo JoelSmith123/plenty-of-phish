@@ -1,15 +1,15 @@
 $blue: #3eb4e0;
 
 .song-table-container {
-  height: 100%;
-  padding-top: 5px;
-  width: 60vw;
-  margin: auto;
-  box-shadow:-2px 1px 20px #6a6a6a, 2px 1px 20px #6a6a6a;
+  height: auto;
+  padding-bottom: 10px;
+  width: 70vw;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 tr {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(245, 245, 245, 0.85);
   background-blend-mode: lighten;
 }
 
@@ -39,7 +39,7 @@ tr {
   &:hover {
     color: $blue;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
   }
 
@@ -69,10 +69,9 @@ tr {
 }
 
 .song-table {
-  border-spacing: 0 2px;
+  border-spacing: 0 0;
   height: calc(100% - 180px);
   margin-bottom: 120px;
-  padding-bottom: 12px;
   width: 100%;
 }
 
@@ -98,12 +97,14 @@ tr {
 .song-table-duration {
   transition: border-bottom 500ms;
   border-bottom: 1px solid transparent;
-  padding-top: 5px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
 }
 
 .song-table-position {
   padding-left: 12px;
-  padding-right: 6px;
+  padding-right: 0px;
   width: 30px;
 }
 
@@ -127,7 +128,7 @@ tr {
   width: 15%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .song-table-row {
     font-size: 1.2rem;
   }
@@ -140,6 +141,10 @@ tr {
   .venue-name {
     font-size: 1.5rem;
   }
+
+  .song-table-container {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -148,5 +153,13 @@ tr {
     width: 300px;
   }
 
+  .song-table-container {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .song-table {
+    margin-bottom: 90px;
+  }
 }
 
