@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Trie from '@jarushford/autocomplete';
 import './styles/main.scss';
-import { timingSafeEqual } from 'crypto';
-
 
 export default class Search extends Component {
   constructor() {
