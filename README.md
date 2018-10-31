@@ -1,7 +1,5 @@
 # Plenty of Phish
 
-### Abstract
-
 A React-based setlist tracking and audio playing application with taper recordings of the band Phish
 
 View live site [here](https://jarushford.github.io/plenty-of-phish/)
@@ -17,7 +15,7 @@ npm install
 npm start
 
 ```
-### About the Project
+### Abstract
 
 For this project we worked in a group to make an application in React. This project was an opportunity to reinforce and solidify our Javascript fundamentals, Object Oriented Programming principles, work with large datasets, and develep sound group workflow practices. It was also an opportunity to solve problems; after all, software, at its core, is about solving problems. Our application solves the problem of the diminishing presence of the tape-trading community. The taping culture within the jam-band scene was at one point incredibly prevalent and played a huge part in why that community is the way it is today. While it has not completely gone away, monetized soundboard recording websites, and others audio providers like Spotify have changed the way the community interacts with music and technology. It's not like websites or apps haven't made taped shows freely accessible on the internet, but many of these sites are either poorly designed or have UX/UI that is lacking. Our goal was to create an application that acts as a concert/information database that includes audio, all in the spirit of how crowd-sourced music exchange once was, though still easy and pleasant to interact with. Eventually this application could be expanded to include other bands, but by starting with Phish shows from 2017, we still had a solid dataset from which to begin.
 
