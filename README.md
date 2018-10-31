@@ -52,8 +52,7 @@ As a user,
   In order to locate content that I'm interested in,
   
   When I search for a Song,
-  Then I should see all of the shows at which that song was played,
-    and I should see that song highlighted when I click on the show
+  Then I should see all of the shows at which that song was played.
     
   When I search for a Venue,
   Then I should see all of the shows that were played at that venue, if there are any
@@ -99,7 +98,7 @@ As a user,
 As a user,
   In order to view shows in a way that makes sense,
   When I click on 'View All',
-  Then I should see all shows in order of most recent
+  Then I should see all shows in chronological order
   
   In order to explore shows,
   When I click on 'Random',
