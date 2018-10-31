@@ -14,6 +14,7 @@
 
 .concert-grid {
   width: 100%;
+  max-width: 1340px;
   padding: 35px 15px 165px 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 270px);
@@ -22,14 +23,15 @@
   grid-auto-flow: dense;
   position: relative;
   z-index: 1;
+  margin: 0 auto;
 }
 
 .concert-display::before,
 .error-display::before {
   background: 
-  url(http://thephunion.com/wp-content/uploads/2013/04/Umphreys.jpg);
-  opacity: 0.40;
-  filter: blur(3px);
+  url(http://smedia.pnet-static.com/img/MSG1631.jpg-large);
+  opacity: 0.65;
+  filter: blur(8px);
   content: '';
   bottom: 0;
   left: 0;

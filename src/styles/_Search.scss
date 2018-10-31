@@ -34,14 +34,15 @@ form {
 
 .search-input {
   @include form-styles(calc(1vw + .6em), 40px, 40%);
-  background: lighten(rgba(58, 58, 58, .9), 35%);
+  background: lighten(rgba(58, 58, 58, .9), 70%);
   border: 1px solid rgba(58, 58, 58, .9);
-  box-shadow: 2px 2px 8px #28596d;
+  box-shadow: 0px 0px 0px #28596d;
   padding-left: 12px;
   text-overflow: ellipsis;
+  color: #3a3a3a;
 
   &::placeholder {
-    color: #ffffff;
+    color: #6a6a6a;
     opacity: .75;
   }
 }
