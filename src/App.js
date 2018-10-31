@@ -14,19 +14,44 @@ class App extends Component {
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: '',
       concertData: [],
-      showAllConcerts: false
-    }
+      showAllConcerts: false,
+      concertVenues: [],
+      concertDates: [],
+      songs: []
+    };
   } 
 
   componentDidMount() {
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
       .then(response => response.json()) 
-      .then(concertData => this.setState({concertData: concertData.phishShows}))
-      .catch(error => console.log(error));
+      .then(concertData => {
+        this.setState({
+          concertData: concertData.phishShows,
+          concertVenues: Array.from(concertData.phishShows).map(show => {
+            return show.venue.name;
+          }),
+          concertDates: Array.from(concertData.phishShows).map(show => {
+            return show.date;
+          })
+        })
+      })
+      .catch(error => console.error(error));
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/setLists')
       .then(response => response.json())
-      .then(setListData => this.setState({setlistData: setListData.setLists}))
-      .catch(error => console.log(error));
+      .then(setListData => {
+        const showKeys = Object.keys(setListData.setLists);
+        const newSongs = [];
+        showKeys.forEach(show => {
+          Array.from(setListData.setLists[show]).forEach(song => {
+            newSongs.push(song.title);
+          });
+        });
+        this.setState({
+          setlistData: setListData.setLists,
+          songs: newSongs
+        })
+      })
+      .catch(error => console.error(error));
   }
 
   toggleShowAllConcerts = (boolean, e) => {
@@ -35,20 +60,20 @@ class App extends Component {
     }
     this.setState({
       showAllConcerts: boolean
-    })
-    console.log(this.state.showAllConcerts)
+    });
   }
 
   updateRandomConcertData = (e) => {
-    e.preventDefault()
-    this.toggleShowAllConcerts(false, e)
-    this.forceUpdate()
+    e.preventDefault();
+    this.toggleShowAllConcerts(false, e);
+    this.forceUpdate();
   }
 
   updateCurrentSetlist = (id) => {
     let show = this.state.concertData.find((concert) => {
       return concert.id === id;
-    })
+    });
+
     this.setState({
       currentSetlist: this.state.setlistData[id],
       currentShow: show
@@ -59,11 +84,11 @@ class App extends Component {
     if (isSongFinished === 1) {
       this.setState({
         currentSong: this.state.currentSong + 1
-      })
+      });
     } else {
       this.setState({
         currentSong: this.state.currentSong - 1
-      })
+      });
     }
   }
 
@@ -71,14 +96,12 @@ class App extends Component {
     this.setState({
       currentSearch: searchValue
     });
-    console.log(this.state.currentSearch)
   }
 
   updateCurrentSongIndex = (songIndex) => {
     this.setState({
       currentSong: songIndex
     });
-    console.log('Song Index:', this.state.currentSong)
   }
 
   render() {
@@ -86,25 +109,28 @@ class App extends Component {
       <div className="App">
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}
-                updateRandomConcertData={this.updateRandomConcertData}
-                toggleShowAllConcerts={this.toggleShowAllConcerts}/>
+          updateRandomConcertData={this.updateRandomConcertData}
+          concertDates={this.state.concertDates}
+          songs={this.state.songs}
+          concertVenues={this.state.concertVenues}
+          toggleShowAllConcerts={this.toggleShowAllConcerts}/>
         <ConcertDisplay concertData={this.state.concertData}
-                        showAllConcerts={this.state.showAllConcerts}
-                        currentShow={this.state.currentShow}
-                        currentSetlist={this.state.currentSetlist}
-                        setlistData={this.state.setlistData}
-                        currentSearch={this.state.currentSearch}
-                        updateCurrentSong={this.updateCurrentSong}
-                        updateCurrentSongIndex={this.updateCurrentSongIndex}
-                        updateCurrentSetlist={this.updateCurrentSetlist}
-                        updateRandomConcertData={this.updateRandomConcertData}
-                        toggleShowAllConcerts={this.toggleShowAllConcerts}/>
+          showAllConcerts={this.state.showAllConcerts}
+          currentShow={this.state.currentShow}
+          currentSetlist={this.state.currentSetlist}
+          setlistData={this.state.setlistData}
+          currentSearch={this.state.currentSearch}
+          updateCurrentSong={this.updateCurrentSong}
+          updateCurrentSongIndex={this.updateCurrentSongIndex}
+          updateCurrentSetlist={this.updateCurrentSetlist}
+          updateRandomConcertData={this.updateRandomConcertData}
+          toggleShowAllConcerts={this.toggleShowAllConcerts}/>
         <AudioPlayer currentSong={this.state.currentSong}
-                      currentSetlist={this.state.currentSetlist}
-                      currentShow={this.state.currentShow}
-                      goToNextSong={this.goToNextSong} />
+          currentSetlist={this.state.currentSetlist}
+          currentShow={this.state.currentShow}
+          goToNextSong={this.goToNextSong} />
       </div>
-    )
+    );
   }
 }
 
