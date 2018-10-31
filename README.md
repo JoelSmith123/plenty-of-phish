@@ -11,6 +11,8 @@ View live site [here](https://jarushford.github.io/plenty-of-phish/)
 ```
 git clone https://github.com/jarushford/plenty-of-phish.git
 
+cd plenty-of-phish
+
 npm install 
 
 npm start
