@@ -4,6 +4,8 @@
 
 A React-based setlist tracking and audio playing application with taper recordings of the band Phish
 
+View live site [here](https://jarushford.github.io/plenty-of-phish/)
+
 ##
 
 ### Install/Setup Instructions 
