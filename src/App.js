@@ -14,18 +14,43 @@ class App extends Component {
       currentShow: {date: "--", venue: {name: "--", location: "--"}},
       currentSearch: '',
       concertData: [],
-      showAllConcerts: false
+      showAllConcerts: false,
+      concertVenues: [],
+      concertDates: [],
+      songs: []
     };
   } 
 
   componentDidMount() {
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/phishShows')
       .then(response => response.json()) 
-      .then(concertData => this.setState({concertData: concertData.phishShows}))
+      .then(concertData => {
+        this.setState({
+          concertData: concertData.phishShows,
+          concertVenues: Array.from(concertData.phishShows).map(show => {
+            return show.venue.name;
+          }),
+          concertDates: Array.from(concertData.phishShows).map(show => {
+            return show.date;
+          })
+        })
+      })
       .catch(error => console.error(error));
     fetch('https://whateverly-datasets.herokuapp.com/api/v1/setLists')
       .then(response => response.json())
-      .then(setListData => this.setState({setlistData: setListData.setLists}))
+      .then(setListData => {
+        const showKeys = Object.keys(setListData.setLists);
+        const newSongs = [];
+        showKeys.forEach(show => {
+          Array.from(setListData.setLists[show]).forEach(song => {
+            newSongs.push(song.title);
+          });
+        });
+        this.setState({
+          setlistData: setListData.setLists,
+          songs: newSongs
+        })
+      })
       .catch(error => console.error(error));
   }
 
@@ -85,6 +110,9 @@ class App extends Component {
         <Header />
         <Search updateCurrentDisplay={this.updateCurrentDisplay}
           updateRandomConcertData={this.updateRandomConcertData}
+          concertDates={this.state.concertDates}
+          songs={this.state.songs}
+          concertVenues={this.state.concertVenues}
           toggleShowAllConcerts={this.toggleShowAllConcerts}/>
         <ConcertDisplay concertData={this.state.concertData}
           showAllConcerts={this.state.showAllConcerts}

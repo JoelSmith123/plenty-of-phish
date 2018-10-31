@@ -73,6 +73,10 @@ form {
   transition: .8s;
 }
 
+.search-input::-webkit-calendar-picker-indicator {
+  display: none;      
+}
+
 @media screen and (max-width: 650px) {
   form {
     justify-content: space-between;
