@@ -114,6 +114,11 @@ As a user,
 
 
 #### Our Finished Design
+
+<img width="1458" alt="screen shot 2018-10-31 at 2 02 23 pm" src="https://user-images.githubusercontent.com/40005248/47815490-1d931e80-dd16-11e8-9550-a7473629dbf5.png">
+
+<img width="1458" alt="screen shot 2018-10-31 at 2 03 51 pm" src="https://user-images.githubusercontent.com/40005248/47815534-37346600-dd16-11e8-96e0-210b939649f6.png">
+
 ### Contributors:
   * Jamie Rushford @jarushford 
   * Loryn Mason @lorynmason
