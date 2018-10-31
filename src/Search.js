@@ -35,8 +35,6 @@ export default class Search extends Component {
     this.setState({
       suggestions: this.trie.suggest(inputValue)
     })
-
-    console.log(this.state.suggestions)
   }
 
   render() {
