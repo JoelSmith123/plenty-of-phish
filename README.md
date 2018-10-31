@@ -1,5 +1,6 @@
 # Plenty of Phish
 
+
 A React-based setlist tracking and audio playing application with taper recordings of the band Phish
 
 View live site [here](https://jarushford.github.io/plenty-of-phish/)
@@ -13,7 +14,6 @@ git clone https://github.com/jarushford/plenty-of-phish.git
 npm install 
 
 npm start
-
 ```
 ### Abstract
 
