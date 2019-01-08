@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/plenty-of-phish/precache-manifest.ab8a0b2faf746a64e958ba73267afa2a.js"
+  "/plenty-of-phish/precache-manifest.86bafaf38c5b93cc8e6728f8e5b70404.js"
 );
 
 workbox.clientsClaim();
